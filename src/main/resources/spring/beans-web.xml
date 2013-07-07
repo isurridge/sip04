@@ -30,7 +30,7 @@ Code: https://github.com/springinpractice
 	<mvc:default-servlet-handler />
 	<mvc:view-controller path="/home.html" view-name="extras/home" />
 	<mvc:view-controller path="/users/registration_ok.html" view-name="users/registrationOk" />
-	<mvc:view-controller path="/events/registration_ok.html" view-name="events/registrationOk" />	
+	<mvc:view-controller path="/events/reg_ok.html" view-name="events/regOk" />	
 	<context:component-scan base-package="com.springinpractice.ch04.web" />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"

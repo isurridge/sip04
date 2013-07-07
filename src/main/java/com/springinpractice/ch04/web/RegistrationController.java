@@ -29,8 +29,8 @@ import com.springinpractice.ch04.service.RegistrationService;
 @Controller
 @RequestMapping("/events")
 public class RegistrationController {
-	private static final String VN_REG_FORM = "events/registrationForm";
-	private static final String VN_REG_OK = "redirect:events/registration_ok.html";
+	private static final String VN_REG_FORM = "events/regForm";
+	private static final String VN_REG_OK = "redirect:events/reg_ok.html";
 	
 	@Inject private RegistrationService registrationService;
 	

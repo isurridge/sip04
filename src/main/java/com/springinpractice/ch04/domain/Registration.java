@@ -32,7 +32,7 @@ import org.hibernate.validator.constraints.Email;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 @NamedQuery(
-	name = "findAccountByUsername",
+	name = "findRegistrationByUsername",
 	query = "from Registration where username = :username")
 @Entity
 @Table(name = "registration")

@@ -64,7 +64,7 @@
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
-					<div class="fieldLabel yui-u city"><spring:message code="newUserRegistration.label.city" /></div>
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.city" /></div>
 					<div class="yui-u">
 						<div><form:input path="city" cssClass="short" cssErrorClass="short error" /></div>
 						<form:errors path="city">

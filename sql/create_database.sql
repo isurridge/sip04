@@ -1,6 +1,20 @@
 drop table if exists account_role;
 drop table if exists role;
 drop table if exists account;
+drop table if exists registration;
+
+create table registration (
+    id int unsigned not null auto_increment primary key,
+    username varchar(50) unique not null,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    email varchar(50) not null,
+    city varchar(50) not null,
+    date_created timestamp default 0,
+    date_modified timestamp default current_timestamp on update current_timestamp,
+    unique index registration_idx_1 (username),
+    unique index registration_idx_2 (email)
+) engine = InnoDb;
 
 create table account (
     id int unsigned not null auto_increment primary key,
@@ -31,6 +45,15 @@ create table account_role (
     foreign key (role_id) references role(id),
     unique index account_role_idx_1 (account_id, role_id)
 ) engine = InnoDb;
+
+insert into registration values
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', null, null),
+    (4, 'daniel', 'Daniel', 'Cazares', 'daniel.cazares@example.com', 'Sac', null, null),
+    (5, 'paula', 'Paula', 'Cazares', 'paula.cazares@example.com', 'New Orleans', null, null);
+
+
 
 insert into account values
     (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'p@ssword', 1, 1, 1, null, null),

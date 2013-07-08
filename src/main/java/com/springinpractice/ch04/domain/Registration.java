@@ -7,22 +7,16 @@
  */
 package com.springinpractice.ch04.domain;
 
-import java.util.Collection;
 import java.util.Date;
-import java.util.HashSet;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -40,7 +34,8 @@ public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city;
 	private Date dateCreated;
-
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -81,15 +76,16 @@ public class Registration {
 
 	public void setEmail(String email) { this.email = email; }
 	
+	
+	
 	@NotNull
 	@Size(min = 1, max = 50)
 	@Column(name = "city")
 	public String getCity() { return city; }
-
+	
 	public void setCity(String city) { this.city = city; }
 	
 	
-
 	
 	@Column(name = "date_created")
 	public Date getDateCreated() { return dateCreated; }

@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.springinpractice.ch04.dao.RegistrationDao;
+import com.springinpractice.ch04.domain.Account;
 import com.springinpractice.ch04.domain.Registration;
 import com.springinpractice.dao.hibernate.AbstractHbnDao;
 
@@ -20,16 +21,15 @@ import com.springinpractice.dao.hibernate.AbstractHbnDao;
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
 @Repository
-public class HbnRegistationDao extends AbstractHbnDao<Registration> implements RegistrationDao {
-	private static final Logger LOG = LoggerFactory.getLogger(HbnRegistationDao.class);
+public class HbnRegistrationDao extends AbstractHbnDao<Registration> implements RegistrationDao {
+	private static final Logger LOG = LoggerFactory.getLogger(HbnRegistrationDao.class);
 	
 
 	
-	public void create(Registration registration) {
-	//	LOG.debug("Creating Registration");
+	public void create(Registration registration, String password) {
+		LOG.debug("Creating Registration");
 		create(registration);
 		
-
 	}
 
 	public Registration findByUsername(String username) {

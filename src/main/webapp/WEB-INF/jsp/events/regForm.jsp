@@ -45,7 +45,7 @@
 						</form:errors>
 					</div>
 				</div>
-			<!-- <div class="gridRow yui-gf">
+			    <div class="gridRow yui-gf">
 					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.lastName" /></div>
 					<div class="yui-u">
 						<div><form:input path="lastName" cssClass="short" cssErrorClass="short error" /></div>
@@ -71,7 +71,7 @@
 							<div class="errorMessage"><form:errors path="city" htmlEscape="false" /></div>
 						</form:errors>
 					</div>
-				</div>-->
+				</div>
 				<div class="gridRow yui-gf">
 					<div class="yui-u first"></div>
 					<div class="yui-u"><input type="submit" value="${register}"></input></div>

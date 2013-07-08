@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.springinpractice.ch04.dao.RegistrationDao;
-import com.springinpractice.ch04.domain.Account;
 import com.springinpractice.ch04.domain.Registration;
 import com.springinpractice.dao.hibernate.AbstractHbnDao;
 
@@ -27,7 +26,7 @@ public class HbnRegistationDao extends AbstractHbnDao<Registration> implements R
 
 	
 	public void create(Registration registration) {
-		LOG.debug("Creating Account");
+	//	LOG.debug("Creating Registration");
 		create(registration);
 		
 

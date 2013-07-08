@@ -34,7 +34,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	private static final Logger log = LoggerFactory.getLogger(RegistrationServiceImpl.class);
 	
 	@Inject private RegistrationDao registrationDao;
-	@Inject private RoleDao roleDao;
+
 	
 	@Override
 	@Transactional(readOnly = false)	
@@ -43,9 +43,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 		boolean valid = !errors.hasErrors();
 		
 		if (valid) {
-			Set<Role> roles = new HashSet<Role>();
-			roles.add(roleDao.findByName("user"));
-			registration.setRoles(roles);
 			registrationDao.create(registration);
 		}
 		

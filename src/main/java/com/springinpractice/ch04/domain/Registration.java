@@ -39,10 +39,8 @@ import org.hibernate.validator.constraints.Email;
 public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city;
-	
 	private Date dateCreated;
-	private Collection<Role> roles = new HashSet<Role>();
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -65,17 +63,6 @@ public class Registration {
 
 	public void setFirstName(String firstName) { this.firstName = firstName; }
 	
-	
-	@NotNull
-	@Size(min = 1, max = 50)
-	@Column(name = "city")
-	public String getCity() { return city; }
-
-	public void setCity(String city) { this.city = city; }
-	
-	
-	
-	
 	@NotNull
 	@Size(min = 1, max = 50)
 	@Column(name = "last_name")
@@ -94,16 +81,15 @@ public class Registration {
 
 	public void setEmail(String email) { this.email = email; }
 	
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Column(name = "city")
+	public String getCity() { return city; }
 
+	public void setCity(String city) { this.city = city; }
 	
-	@ManyToMany
-	@JoinTable(
-		name = "account_role",
-		joinColumns = { @JoinColumn(name = "account_id", referencedColumnName = "id") },
-		inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "id") })
-	public Collection<Role> getRoles() { return roles; }
 	
-	public void setRoles(Collection<Role> roles) { this.roles = roles; }
+
 	
 	@Column(name = "date_created")
 	public Date getDateCreated() { return dateCreated; }

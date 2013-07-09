@@ -42,6 +42,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 		
 		boolean valid = !errors.hasErrors();
 		
+		
 		if (valid) {
 			registrationDao.create(registration);
 		}

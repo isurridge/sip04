@@ -7,6 +7,9 @@
  */
 package com.springinpractice.ch04.web;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.inject.Inject;
 import javax.validation.Valid;
 
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.springinpractice.ch04.domain.Registration;
 import com.springinpractice.ch04.service.RegistrationService;
@@ -31,6 +35,7 @@ import com.springinpractice.ch04.service.RegistrationService;
 public class RegistrationController {
 	private static final String VN_REG_FORM = "events/regForm";
 	private static final String VN_REG_OK = "redirect:events/reg_ok.html";
+	 private ArrayList<String> interests; 
 	
 	@Inject private RegistrationService registrationService;
 	
@@ -45,9 +50,19 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public String getRegistrationForm(Model model) {
+	public ModelAndView getRegistrationForm(Model model) {
 		model.addAttribute("registration", new RegistrationForm());
-		return VN_REG_FORM;
+		
+        ArrayList<String> interests = new ArrayList<String>();
+        interests.add("Man");
+        interests.add("Women");
+        interests.add("Both");
+        HashMap<String, ArrayList<String>> mod= new HashMap<String, ArrayList<String>>();
+
+        mod.put("interests", interests);
+        model.addAttribute("interests", mod);
+        return new ModelAndView(VN_REG_FORM, "model", mod); 
+		//return VN_REG_FORM;
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
@@ -59,6 +74,16 @@ public class RegistrationController {
 		registrationService.addRegistration(toRegistration(form), result);
 		return (result.hasErrors() ? VN_REG_FORM : VN_REG_OK);
 	}
+	
+	
+    public ArrayList<String> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(ArrayList<String> interests) {
+        this.interests = interests;
+    }
+	
 	
 	private static Registration toRegistration(RegistrationForm form) {
 		Registration registration = new Registration();
@@ -72,16 +97,7 @@ public class RegistrationController {
 		registration.setAda(form.getAda());
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
-		registration.setBrSession1(form.getBrSession1());
-		registration.setBrSession2(form.getBrSession2());
-		registration.setBrSession3(form.getBrSession3());
-		registration.setBrSession4(form.getBrSession4());
-		registration.setBrSession5(form.getBrSession5());
-		registration.setBrSession6(form.getBrSession6());
-		registration.setBrSession7(form.getBrSession7());
-		registration.setBrSession8(form.getBrSession8());
-		registration.setBrSession9(form.getBrSession9());
-		registration.setBrSession10(form.getBrSession10());
+		registration.setInterest(form.getInterest());
 		return registration;
 	}
 }

@@ -73,6 +73,55 @@
 					</div>
 				</div>
 				<div class="gridRow yui-gf">
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.company" /></div>
+					<div class="yui-u">
+						<div><form:input path="company" cssClass="short" cssErrorClass="short error" /></div>
+						<form:errors path="company">
+							<div class="errorMessage"><form:errors path="company" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.travelArranger" /></div>
+					<div class="yui-u">
+						<div><form:input path="travelArranger" cssClass="short" cssErrorClass="short error" /></div>
+						<form:errors path="travelArranger">
+							<div class="errorMessage"><form:errors path="travelArranger" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.ada" /></div>
+					<div class="yui-u">
+						<div><form:input path="ada" cssClass="short" cssErrorClass="short error" /></div>
+						<form:errors path="ada">
+							<div class="errorMessage"><form:errors path="ada" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.contactName" /></div>
+					<div class="yui-u">
+						<div><form:input path="contactName" cssClass="short" cssErrorClass="short error" /></div>
+						<form:errors path="contactName">
+							<div class="errorMessage"><form:errors path="contactName" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>					
+				<div class="gridRow yui-gf">
+					<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.contactPhone" /></div>
+					<div class="yui-u">
+						<div><form:input path="contactPhone" cssClass="short" cssErrorClass="short error" /></div>
+						<form:errors path="contactPhone">
+							<div class="errorMessage"><form:errors path="contactPhone" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>					
+				
+				
+				
+				
+				<div class="gridRow yui-gf">
 					<div class="yui-u first"></div>
 					<div class="yui-u"><input type="submit" value="${register}"></input></div>
 				</div>

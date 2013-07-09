@@ -37,7 +37,7 @@ public class RegistrationController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
-			"username",	"firstName", "lastName", "email", "city"
+			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -60,8 +60,6 @@ public class RegistrationController {
 		return (result.hasErrors() ? VN_REG_FORM : VN_REG_OK);
 	}
 
-
-	
 	private static Registration toRegistration(RegistrationForm form) {
 		Registration registration = new Registration();
 		registration.setUsername(form.getUsername());
@@ -69,6 +67,11 @@ public class RegistrationController {
 		registration.setLastName(form.getLastName());
 		registration.setEmail(form.getEmail());
 		registration.setCity(form.getCity());
+		registration.setCompany(form.getCompany());
+		registration.setTravelArranger(form.getTravelArranger());
+		registration.setAda(form.getAda());
+		registration.setContactName(form.getContactName());
+		registration.setContactPhone(form.getContactPhone());
 		return registration;
 	}
 }

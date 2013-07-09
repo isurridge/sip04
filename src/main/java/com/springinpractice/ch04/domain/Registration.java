@@ -32,7 +32,7 @@ import org.hibernate.validator.constraints.Email;
 @Table(name = "registration")
 public class Registration {
 	private Long id;
-	private String username, firstName, lastName, email, city;
+	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private Date dateCreated;
 	
 	
@@ -86,6 +86,39 @@ public class Registration {
 	public void setCity(String city) { this.city = city; }
 	
 	
+	@Size(min = 1, max = 50)
+	@Column(name = "company")
+	public String getCompany() { return company; }
+	
+	public void setCompany(String company) { this.company = company; }
+	
+	
+	@Size(min = 1, max = 50)
+	@Column(name = "travel_arranger")
+	public String getTravelArranger() { return travelArranger; }
+	
+	public void setTravelArranger(String travelArranger) { this.travelArranger = travelArranger; }
+	
+	
+	@Size(min = 1, max = 50)
+	@Column(name = "ada")
+	public String getAda() { return ada; }
+	
+	public void setAda(String ada) { this.ada = ada; }
+	
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Column(name = "contact_name")
+	public String getContactName() { return contactName; }
+	
+	public void setContactName(String contactName) { this.contactName = contactName; }
+	
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Column(name = "contact_phone")
+	public String getContactPhone() { return contactPhone; }
+	
+	public void setContactPhone(String contactPhone) { this.contactPhone = contactPhone; }
 	
 	@Column(name = "date_created")
 	public Date getDateCreated() { return dateCreated; }

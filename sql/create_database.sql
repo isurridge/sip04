@@ -15,6 +15,16 @@ create table registration (
     travel_arranger varchar(50),
     company varchar(50),
     ada varchar(200),
+    br_session1 boolean,
+    br_session2 boolean,
+    br_session3 boolean,
+    br_session4 boolean,
+    br_session5 boolean,
+    br_session6 boolean,
+    br_session7 boolean,
+    br_session8 boolean,
+    br_session9 boolean,
+    br_session10 boolean,
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),
@@ -52,9 +62,9 @@ create table account_role (
 ) engine = InnoDb;
 
 insert into registration values
-    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', null, null),
-    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', null, null),
-    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', null, null);
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada',1,1,1,1,1,1,1,1,1,1,null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada',1,1,1,1,1,1,1,1,1,1,null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada',1,1,1,1,1,1,1,1,1,1,null, null);
 
 
     

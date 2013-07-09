@@ -59,7 +59,7 @@ public class RegistrationController {
 		registrationService.addRegistration(toRegistration(form), result);
 		return (result.hasErrors() ? VN_REG_FORM : VN_REG_OK);
 	}
-
+	
 	private static Registration toRegistration(RegistrationForm form) {
 		Registration registration = new Registration();
 		registration.setUsername(form.getUsername());
@@ -72,6 +72,16 @@ public class RegistrationController {
 		registration.setAda(form.getAda());
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
+		registration.setBrSession1(form.getBrSession1());
+		registration.setBrSession2(form.getBrSession2());
+		registration.setBrSession3(form.getBrSession3());
+		registration.setBrSession4(form.getBrSession4());
+		registration.setBrSession5(form.getBrSession5());
+		registration.setBrSession6(form.getBrSession6());
+		registration.setBrSession7(form.getBrSession7());
+		registration.setBrSession8(form.getBrSession8());
+		registration.setBrSession9(form.getBrSession9());
+		registration.setBrSession10(form.getBrSession10());
 		return registration;
 	}
 }

@@ -33,6 +33,7 @@ import org.hibernate.validator.constraints.Email;
 public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
+	private boolean brSession1, brSession2, brSession3, brSession4, brSession5, brSession6, brSession7, brSession8, brSession9, brSession10;
 	private Date dateCreated;
 	
 	
@@ -119,6 +120,78 @@ public class Registration {
 	public String getContactPhone() { return contactPhone; }
 	
 	public void setContactPhone(String contactPhone) { this.contactPhone = contactPhone; }
+	
+	
+	
+	
+	
+	@Column(name = "br_session1")
+	public boolean getBrSession1() { return brSession1; }
+	
+	public void setBrSession1(boolean brSession1) { this.brSession1 = brSession1; }
+	
+	
+	@Column(name = "br_session2")
+	public boolean getBrSession2() { return brSession2; }
+	
+	public void setBrSession2(boolean brSession2) { this.brSession2 = brSession2; }
+	
+	
+	@Column(name = "br_session3")
+	public boolean getBrSession3() { return brSession3; }
+	
+	public void setBrSession3(boolean brSession3) { this.brSession3 = brSession3; }
+	
+	
+	@Column(name = "br_session4")
+	public boolean getBrSession4() { return brSession4; }
+	
+	public void setBrSession4(boolean brSession4) { this.brSession4 = brSession4; }
+	
+	
+	@Column(name = "br_session5")
+	public boolean getBrSession5() { return brSession5; }
+	
+	public void setBrSession5(boolean brSession5) { this.brSession5 = brSession5; }
+	
+	
+	@Column(name = "br_session6")
+	public boolean getBrSession6() { return brSession6; }
+	
+	public void setBrSession6(boolean brSession6) { this.brSession6 = brSession6; }
+	
+	
+	@Column(name = "br_session7")
+	public boolean getBrSession7() { return brSession7; }
+	
+	public void setBrSession7(boolean brSession7) { this.brSession7 = brSession7; }
+	
+	
+	@Column(name = "br_session8")
+	public boolean getBrSession8() { return brSession8; }
+	
+	public void setBrSession8(boolean brSession8) { this.brSession8 = brSession8; }
+	
+	
+	@Column(name = "br_session9")
+	public boolean getBrSession9() { return brSession9; }
+	
+	public void setBrSession9(boolean brSession9) { this.brSession9 = brSession9; }
+	
+	
+	@Column(name = "br_session10")
+	public boolean getBrSession10() { return brSession10; }
+	
+	public void setBrSession10(boolean brSession10) { this.brSession10 = brSession10; }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Column(name = "date_created")
 	public Date getDateCreated() { return dateCreated; }

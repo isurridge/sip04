@@ -116,7 +116,141 @@
 							<div class="errorMessage"><form:errors path="contactPhone" htmlEscape="false" /></div>
 						</form:errors>
 					</div>
-				</div>					
+				</div>				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession1" path="brSession1" cssErrorClass="error" />
+							<label for="brSession1"><spring:message code="newUserRegistration.label.brSession1" /></label>
+						</div>
+						<form:errors path="brSession1">
+							<div class="errorMessage"><form:errors path="brSession1" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession2" path="brSession2" cssErrorClass="error" />
+							<label for="brSession2"><spring:message code="newUserRegistration.label.brSession2" /></label>
+						</div>
+						<form:errors path="brSession2">
+							<div class="errorMessage"><form:errors path="brSession2" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession3" path="brSession3" cssErrorClass="error" />
+							<label for="brSession3"><spring:message code="newUserRegistration.label.brSession3" /></label>
+						</div>
+						<form:errors path="brSession3">
+							<div class="errorMessage"><form:errors path="brSession3" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession4" path="brSession4" cssErrorClass="error" />
+							<label for="brSession4"><spring:message code="newUserRegistration.label.brSession4" /></label>
+						</div>
+						<form:errors path="brSession4">
+							<div class="errorMessage"><form:errors path="brSession4" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession5" path="brSession5" cssErrorClass="error" />
+							<label for="brSession5"><spring:message code="newUserRegistration.label.brSession5" /></label>
+						</div>
+						<form:errors path="brSession5">
+							<div class="errorMessage"><form:errors path="brSession5" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession6" path="brSession6" cssErrorClass="error" />
+							<label for="brSession6"><spring:message code="newUserRegistration.label.brSession6" /></label>
+						</div>
+						<form:errors path="brSession6">
+							<div class="errorMessage"><form:errors path="brSession6" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession7" path="brSession7" cssErrorClass="error" />
+							<label for="brSession7"><spring:message code="newUserRegistration.label.brSession7" /></label>
+						</div>
+						<form:errors path="brSession7">
+							<div class="errorMessage"><form:errors path="brSession7" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession8" path="brSession8" cssErrorClass="error" />
+							<label for="brSession8"><spring:message code="newUserRegistration.label.brSession8" /></label>
+						</div>
+						<form:errors path="brSession8">
+							<div class="errorMessage"><form:errors path="brSession8" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession9" path="brSession9" cssErrorClass="error" />
+							<label for="brSession9"><spring:message code="newUserRegistration.label.brSession9" /></label>
+						</div>
+						<form:errors path="brSession9">
+							<div class="errorMessage"><form:errors path="brSession9" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+				<div class="gridRow yui-gf">
+					<div class="yui-u first"></div>
+					<div class="yui-u">
+						<div>
+							<form:checkbox id="brSession10" path="brSession10" cssErrorClass="error" />
+							<label for="brSession10"><spring:message code="newUserRegistration.label.brSession10" /></label>
+						</div>
+						<form:errors path="brSession10">
+							<div class="errorMessage"><form:errors path="brSession10" htmlEscape="false" /></div>
+						</form:errors>
+					</div>
+				</div>				
+
 				
 				
 				

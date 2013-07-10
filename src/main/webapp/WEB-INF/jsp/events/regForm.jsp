@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <c:url var="submitRegistrationUrl" value="/events.html" />
 
 <spring:message var="pageTitle" code="newUserRegistration.pageTitle" />
-<spring:message var="msgAllFieldsRequired" code="newUserRegistration.message.allFieldsRequired" />
+<spring:message var="msgAllFieldsRequired"
+	code="newUserRegistration.message.allFieldsRequired" />
 <spring:message var="register" code="newUserRegistration.label.register" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title><c:out value="${pageTitle}" /></title>
+<head>
+<title><c:out value="${pageTitle}" /></title>
+ol.myList
+{
+list-style-type:none;
+}
+</head>
+<body>
+	<h1>
+		<c:out value="${pageTitle}" />
+	</h1>
 
-	</head>
-	<body>
-		<h1><c:out value="${pageTitle}" /></h1>
-		
-		<form:form cssClass="main" action="${submitRegistrationUrl}" modelAttribute="registration">
-			<form:errors path="*">
-				<div class="warning alert"><spring:message code="error.global" /></div>
-			</form:errors>
-			
-			<p><spring:message code="newUserRegistration.message.allFieldsRequired" /></p>
+	<form:form cssClass="main" action="${submitRegistrationUrl}"
+		modelAttribute="registration">
+		<form:errors path="*">
+			<div class="warning alert">
+				<spring:message code="error.global" />
+			</div>
+		</form:errors>
+
+		<p>
+			<spring:message code="newUserRegistration.message.allFieldsRequired" />
+		</p>
 
 		<div class="panel grid">
 			<div class="gridRow yui-gf">
@@ -193,31 +204,37 @@
 
 
 			<div class="gridRow yui-gf">
-				<div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.interest" /></div>
-				
-			
-			<div class="yui-u">
-				<div>
-				  	<form:radiobuttons  items="${interestsMap}" path="interest" cssClass="" 
-						cssErrorClass="error" />
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.interest" />
 				</div>
-				<form:errors path="interest">
-					<div class="errorMessage">
-						<form:errors path="interest" htmlEscape="false" />
+
+
+				<div class="yui-u">
+					<div>
+						<ol  class="myList">
+							<form:checkboxes items="${interestsMap}" path="interest" 
+								 element="li" cssErrorClass="error" />
+						</ol>
 					</div>
-				</form:errors>
+					<form:errors path="interest">
+						<div class="errorMessage">
+							<form:errors path="interest" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="yui-u first"></div>
+				<div class="yui-u">
+					<input type="submit" value="${register}"></input>
+				</div>
 			</div>
 		</div>
-
-
-
-
-
-		<div class="gridRow yui-gf">
-					<div class="yui-u first"></div>
-					<div class="yui-u"><input type="submit" value="${register}"></input></div>
-				</div>
-			</div>
-		</form:form>
-	</body>
+	</form:form>
+</body>
 </html>

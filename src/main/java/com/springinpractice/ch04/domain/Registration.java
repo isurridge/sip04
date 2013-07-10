@@ -9,6 +9,7 @@ package com.springinpractice.ch04.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,7 +36,7 @@ public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private Date dateCreated;
-	private String interest[];
+	private String interest;
 	
 	
 	@Id
@@ -124,15 +125,13 @@ public class Registration {
 	
 	
 	@Column(name = "interest")	
-    public String[] getInterest() {
+    public String getInterest() {
         return interest;
     }
 
-    public void setInterest(String[] interest) {
+    public void setInterest(String interest) {
         this.interest = interest;
     }
-	
-	
 
 	
 	

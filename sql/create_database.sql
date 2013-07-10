@@ -15,7 +15,7 @@ create table registration (
     travel_arranger varchar(50),
     company varchar(50),
     ada varchar(200),
-    interest varchar(50),
+    interest varchar(500),
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),

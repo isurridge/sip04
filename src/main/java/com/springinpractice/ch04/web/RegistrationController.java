@@ -9,6 +9,8 @@ package com.springinpractice.ch04.web;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -35,14 +37,15 @@ import com.springinpractice.ch04.service.RegistrationService;
 public class RegistrationController {
 	private static final String VN_REG_FORM = "events/regForm";
 	private static final String VN_REG_OK = "redirect:events/reg_ok.html";
-	 private ArrayList<String> interests; 
+
+	
 	
 	@Inject private RegistrationService registrationService;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
-			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada"
+			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "interest"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -51,17 +54,18 @@ public class RegistrationController {
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView getRegistrationForm(Model model) {
-		model.addAttribute("registration", new RegistrationForm());
+		ModelAndView mav = new ModelAndView(VN_REG_FORM);  
 		
-        ArrayList<String> interests = new ArrayList<String>();
-        interests.add("Man");
-        interests.add("Women");
-        interests.add("Both");
-        HashMap<String, ArrayList<String>> mod= new HashMap<String, ArrayList<String>>();
-
-        mod.put("interests", interests);
-        model.addAttribute("interests", mod);
-        return new ModelAndView(VN_REG_FORM, "model", mod); 
+		List<String> interestsMap = new ArrayList<String>();  
+		interestsMap.add("Judo");  
+		interestsMap.add("Basketball");  
+        interestsMap.add("Ping-Pong");
+        
+        mav.addObject("interestsMap", interestsMap);  
+        mav.addObject("registration", new RegistrationForm());  
+          
+        return mav; 
+     //  return new ModelAndView(VN_REG_FORM, "model", interestsMap.values()); 
 		//return VN_REG_FORM;
 	}
 	
@@ -76,13 +80,7 @@ public class RegistrationController {
 	}
 	
 	
-    public ArrayList<String> getInterests() {
-        return interests;
-    }
 
-    public void setInterests(ArrayList<String> interests) {
-        this.interests = interests;
-    }
 	
 	
 	private static Registration toRegistration(RegistrationForm form) {

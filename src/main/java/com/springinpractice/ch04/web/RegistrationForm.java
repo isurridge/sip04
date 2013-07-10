@@ -9,6 +9,7 @@ package com.springinpractice.ch04.web;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
@@ -18,6 +19,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.Email;
 
+
+
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
  */
@@ -25,7 +28,8 @@ import org.hibernate.validator.constraints.Email;
 
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
-	private String interest[];
+	private String interest; 
+		
 	
 
 	
@@ -98,15 +102,18 @@ public class RegistrationForm {
 	public void setContactPhone(String contactPhone) { this.contactPhone = contactPhone; }
 	
 	
+	
+
 	@Column(name = "interest")	
-    public String[] getInterest() {
+    public String getInterest() {
         return interest;
     }
 
-    public void setInterest(String[] interest) {
+    public void setInterest(String interest) {
         this.interest = interest;
     }
 	
+
 	
 	
 

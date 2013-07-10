@@ -198,7 +198,7 @@
 			
 			<div class="yui-u">
 				<div>
-					<form:radiobuttons  items="${model.interests}" path="interest" cssClass="" 
+				  	<form:radiobuttons  items="${interestsMap}" path="interest" cssClass="" 
 						cssErrorClass="error" />
 				</div>
 				<form:errors path="interest">

@@ -7,6 +7,8 @@
  */
 package com.springinpractice.ch04.service;
 
+import java.util.List;
+
 import org.springframework.validation.Errors;
 
 import com.springinpractice.ch04.domain.Registration;
@@ -17,4 +19,5 @@ import com.springinpractice.ch04.domain.Registration;
 public interface RegistrationService {
 
 	boolean addRegistration(Registration registration, Errors errors);
+	List buildSessionSelection(String fieldName);
 }

@@ -7,7 +7,9 @@
  */
 package com.springinpractice.ch04.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -35,6 +37,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 	
 	@Inject private RegistrationDao registrationDao;
 
+	
+	@Override
+	@Transactional(readOnly = false)	
+    public List buildSessionSelection(String fieldName){    	
+		List<String> interestsMap = new ArrayList<String>();  
+		interestsMap.add("Judo");  
+		interestsMap.add("Basketball");  
+        interestsMap.add("Ping-Pong");
+    	return interestsMap;
+    }
+	
 	
 	@Override
 	@Transactional(readOnly = false)	

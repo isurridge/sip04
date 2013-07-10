@@ -211,9 +211,9 @@ list-style-type:none;
 
 				<div class="yui-u">
 					<div>
-						<ol  class="myList">
-							<form:checkboxes items="${interestsMap}" path="interest" 
-								 element="li" cssErrorClass="error" />
+						<ol class="myList">
+							<form:radiobuttons items="${interestsMap}" path="interest"
+								element="li" cssErrorClass="error" />
 						</ol>
 					</div>
 					<form:errors path="interest">

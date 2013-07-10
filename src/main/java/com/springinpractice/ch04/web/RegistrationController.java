@@ -56,12 +56,9 @@ public class RegistrationController {
 	public ModelAndView getRegistrationForm(Model model) {
 		ModelAndView mav = new ModelAndView(VN_REG_FORM);  
 		
-		List<String> interestsMap = new ArrayList<String>();  
-		interestsMap.add("Judo");  
-		interestsMap.add("Basketball");  
-        interestsMap.add("Ping-Pong");
+		
         
-        mav.addObject("interestsMap", interestsMap);  
+        mav.addObject("interestsMap", registrationService.buildSessionSelection("interest"));  
         mav.addObject("registration", new RegistrationForm());  
           
         return mav; 

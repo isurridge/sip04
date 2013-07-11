@@ -15,10 +15,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><c:out value="${pageTitle}" /></title>
-ol.myList
-{
-list-style-type:none;
+<style>
+ol.myList li.myList {
+	list-style-type: none;
 }
+</style>
 </head>
 <body>
 	<h1>
@@ -212,13 +213,13 @@ list-style-type:none;
 				<div class="yui-u">
 					<div>
 						<ol class="myList">
-							<form:radiobuttons items="${interestsMap}" path="interest"
-								element="li" cssErrorClass="error" />
+							<form:radiobuttons items="${breakout1Map}" path="breakout1"
+								cssClass="myList" element="li" cssErrorClass="error" />
 						</ol>
 					</div>
-					<form:errors path="interest">
+					<form:errors path="breakout1">
 						<div class="errorMessage">
-							<form:errors path="interest" htmlEscape="false" />
+							<form:errors path="breakout1" htmlEscape="false" />
 						</div>
 					</form:errors>
 				</div>

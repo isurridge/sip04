@@ -45,7 +45,7 @@ public class RegistrationController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
-			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "interest"
+			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "breakout1"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -58,8 +58,7 @@ public class RegistrationController {
 		
 		
         
-     //   mav.addObject("interestsMap", registrationService.buildSessionSelection("interest"));  
-        mav.addObject("interestsMap", registrationService.buildSessionSelection("1"));         
+		mav.addObject("breakout1Map", registrationService.buildSessionSelection("1"));         
         mav.addObject("registration", new RegistrationForm());  
           
         return mav; 
@@ -92,7 +91,7 @@ public class RegistrationController {
 		registration.setAda(form.getAda());
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
-		registration.setInterest(form.getInterest());
+		registration.setBreakout1(form.getBreakout1());
 		return registration;
 	}
 }

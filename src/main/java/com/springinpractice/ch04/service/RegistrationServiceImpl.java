@@ -39,7 +39,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	@Override
 	@Transactional(readOnly = false)
-	public List buildSessionSelection(String fieldName) {
+	public List<String> buildSessionSelection(String fieldName) {
 
 		List<String> interestsMap = new ArrayList<String>();
 		for (Event lst : eventDao.findAllBreakouts()) {
@@ -59,7 +59,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		boolean valid = !errors.hasErrors();
 
-		log.debug(registration.getInterest().toString());
 		if (valid) {
 			registrationDao.create(registration);
 		}

@@ -16,7 +16,7 @@ create table registration (
     travel_arranger varchar(50),
     company varchar(50),
     ada varchar(200),
-    interest varchar(500),
+    breakout1 varchar(500),
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),
@@ -78,9 +78,9 @@ insert into registration values
 
 
   insert into event values
-    (1, 'Juan Cazares', 'juan.cazares@example.com', 'Session 1', 'Session Description 1', 'breakout', '1',  null, null),
-    (2, 'Elvira Cazares', 'elvira.cazares@example.com', 'Session 2', 'Session Description 2', 'breakout', '1',  null, null),
-    (3, 'Julia Cazares', 'julia.cazares@example.com', 'Session 3', 'Session Description 3', 'breakout', '1',  null, null);
+    (1, 'Juan Cazares', 'juan.cazares@example.com', '1a - This is breakout choice 1', 'Session Description 1', 'breakout', '1',  null, null),
+    (2, 'Elvira Cazares', 'elvira.cazares@example.com', '2a - This is breakout choice 1', 'Session Description 2', 'breakout', '1',  null, null),
+    (3, 'Julia Cazares', 'julia.cazares@example.com', '3a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null);
 
   
 

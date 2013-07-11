@@ -28,7 +28,7 @@ import org.hibernate.validator.constraints.Email;
 
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
-	private String interest; 
+	private String breakout1; 
 		
 	
 
@@ -104,13 +104,13 @@ public class RegistrationForm {
 	
 	
 
-	@Column(name = "interest")	
-    public String getInterest() {
-        return interest;
+	@Column(name = "breakout1")	
+    public String getBreakout1() {
+        return breakout1;
     }
 
-    public void setInterest(String interest) {
-        this.interest = interest;
+    public void setBreakout1(String breakout1) {
+        this.breakout1 = breakout1;
     }
 	
 
@@ -129,7 +129,7 @@ public class RegistrationForm {
 			.append("travelArranger", travelArranger)
 			.append("ada", ada)
 			.append("contactName", contactName)
-			.append("interest", interest)
+			.append("breakout1", breakout1)
 	.toString();			
 	}		
 }

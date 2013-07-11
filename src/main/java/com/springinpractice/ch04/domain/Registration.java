@@ -36,7 +36,7 @@ public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private Date dateCreated;
-	private String interest;
+	private String breakout1;
 	
 	
 	@Id
@@ -124,13 +124,13 @@ public class Registration {
 	public void setContactPhone(String contactPhone) { this.contactPhone = contactPhone; }
 	
 	
-	@Column(name = "interest")	
-    public String getInterest() {
-        return interest;
+	@Column(name = "breakout1")	
+    public String getBreakout1() {
+        return breakout1;
     }
 
-    public void setInterest(String interest) {
-        this.interest = interest;
+    public void setBreakout1(String breakout1) {
+        this.breakout1 = breakout1;
     }
 
 	

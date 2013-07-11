@@ -80,8 +80,12 @@ insert into registration values
   insert into event values
     (1, 'Juan Cazares', 'juan.cazares@example.com', '1a - This is breakout choice 1', 'Session Description 1', 'breakout', '1',  null, null),
     (2, 'Elvira Cazares', 'elvira.cazares@example.com', '2a - This is breakout choice 1', 'Session Description 2', 'breakout', '1',  null, null),
-    (3, 'Julia Cazares', 'julia.cazares@example.com', '3a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null);
+    (3, 'Julia Cazares', 'julia.cazares@example.com', '3a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null),
+    (4, 'Julia Cazares', 'julia2.cazares@example.com', '4a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null),
+    (5, 'Julia Cazares', 'julia3.cazares@example.com', '5a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null);
 
+  
+  
   
 
 

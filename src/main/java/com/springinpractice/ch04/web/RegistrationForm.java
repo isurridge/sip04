@@ -28,7 +28,7 @@ import org.hibernate.validator.constraints.Email;
 
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
-	private String breakout1; 
+	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10;
 		
 	
 
@@ -113,6 +113,109 @@ public class RegistrationForm {
         this.breakout1 = breakout1;
     }
 	
+    
+
+    
+	@Column(name = "breakout2")	
+    public String getBreakout2() {
+        return breakout2;
+    }
+
+    public void setBreakout2(String breakout2) {
+        this.breakout3 = breakout2;
+    }
+    
+    
+    
+	@Column(name = "breakout3")	
+    public String getBreakout3() {
+        return breakout3;
+    }
+
+    public void setBreakout3(String breakout3) {
+        this.breakout3 = breakout3;
+    }
+    
+    
+    
+	@Column(name = "breakout4")	
+    public String getBreakout4() {
+        return breakout4;
+    }
+
+    public void setBreakout4(String breakout4) {
+        this.breakout4 = breakout4;
+    }
+    
+    
+    
+	@Column(name = "breakout5")	
+    public String getBreakout5() {
+        return breakout5;
+    }
+
+    public void setBreakout5(String breakout5) {
+        this.breakout5 = breakout5;
+    }
+    
+    
+    
+    
+	@Column(name = "breakout6")	
+    public String getBreakout6() {
+        return breakout6;
+    }
+
+    public void setBreakout6(String breakout6) {
+        this.breakout6 = breakout6;
+    }
+    
+    
+    
+    
+	@Column(name = "breakout7")	
+    public String getBreakout7() {
+        return breakout7;
+    }
+
+    public void setBreakout7(String breakout7) {
+        this.breakout7 = breakout7;
+    }
+    
+    
+    
+    
+	@Column(name = "breakout8")	
+    public String getBreakout8() {
+        return breakout8;
+    }
+
+    public void setBreakout8(String breakout8) {
+        this.breakout8 = breakout8;
+    }
+    
+    
+    
+	@Column(name = "breakout9")	
+    public String getBreakout9() {
+        return breakout9;
+    }
+
+    public void setBreakout9(String breakout9) {
+        this.breakout9 = breakout9;
+    }
+    
+    
+    
+	@Column(name = "breakout10")	
+    public String getBreakout10() {
+        return breakout10;
+    }
+
+    public void setBreakout10(String breakout10) {
+        this.breakout10 = breakout10;
+    }
+    
 
 	
 	

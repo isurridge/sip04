@@ -47,6 +47,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 			log.debug("Slot #: " + lst.getSessionSlot() + "   field name: " + fieldName);
 			if (lst.getSessionSlot().equals(fieldName)) {
 				interestsMap.add(lst.getSessionTitle());
+			}else{
+				interestsMap.add("No Scheduled Session at this time");
 			}
 		}
 

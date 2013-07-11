@@ -45,7 +45,8 @@ public class RegistrationController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
-			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "breakout1"
+			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "breakout1",
+			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -56,9 +57,16 @@ public class RegistrationController {
 	public ModelAndView getRegistrationForm(Model model) {
 		ModelAndView mav = new ModelAndView(VN_REG_FORM);  
 		
-		
-        
-		mav.addObject("breakout1Map", registrationService.buildSessionSelection("1"));         
+		mav.addObject("breakout1Map", registrationService.buildSessionSelection("1"));       
+		mav.addObject("breakout2Map", registrationService.buildSessionSelection("2"));  
+		mav.addObject("breakout3Map", registrationService.buildSessionSelection("3"));  
+		mav.addObject("breakout4Map", registrationService.buildSessionSelection("4"));  
+		mav.addObject("breakout5Map", registrationService.buildSessionSelection("5"));  
+		mav.addObject("breakout6Map", registrationService.buildSessionSelection("6"));  
+		mav.addObject("breakout7Map", registrationService.buildSessionSelection("7"));  
+		mav.addObject("breakout8Map", registrationService.buildSessionSelection("8"));  
+		mav.addObject("breakout9Map", registrationService.buildSessionSelection("9"));  
+		mav.addObject("breakout10Map", registrationService.buildSessionSelection("10"));  
         mav.addObject("registration", new RegistrationForm());  
           
         return mav; 

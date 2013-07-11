@@ -79,12 +79,16 @@ insert into registration values
 
   insert into event values
     (1, 'Juan Cazares', 'juan.cazares@example.com', '1a - This is breakout choice 1', 'Session Description 1', 'breakout', '1',  null, null),
-    (2, 'Elvira Cazares', 'elvira.cazares@example.com', '2a - This is breakout choice 1', 'Session Description 2', 'breakout', '1',  null, null),
-    (3, 'Julia Cazares', 'julia.cazares@example.com', '3a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null),
-    (4, 'Julia Cazares', 'julia2.cazares@example.com', '4a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null),
-    (5, 'Julia Cazares', 'julia3.cazares@example.com', '5a - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null);
+    (2, 'Elvira Cazares', 'elvira.cazares@example.com', '1b - This is breakout choice 1', 'Session Description 2', 'breakout', '1',  null, null),
+    (3, 'Julia Cazares', 'julia.cazares@example.com', '1c - This is breakout choice 1', 'Session Description 3', 'breakout', '1',  null, null),
+    (4, 'Julia Cazares', 'julia2.cazares@example.com', '1d - This is breakout choice 1', 'Session Description 4', 'breakout', '1',  null, null),
+    (5, 'Julia Cazares', 'julia3.cazares@example.com', '1e - This is breakout choice 1', 'Session Description 5', 'breakout', '1',  null, null),
+    (6, 'Juan Cazares', 'juan1.cazares@example.com', '2a - This is breakout choice 2', 'Session Description 1', 'breakout', '2',  null, null),
+    (7, 'Elvira Cazares', 'elvira2.cazares@example.com', '2b - This is breakout choice 2', 'Session Description 2', 'breakout', '2',  null, null),
+    (8, 'Julia Cazares', 'julia3.cazares@example.com', '2c - This is breakout choice 2', 'Session Description 3', 'breakout', '2',  null, null),
+    (9, 'Julia Cazares', 'julia21.cazares@example.com', '2d - This is breakout choice 2', 'Session Description 4', 'breakout', '2',  null, null),
+    (10, 'Julia Cazares', 'julia31.cazares@example.com', '2e - This is breakout choice 2', 'Session Description 5', 'breakout', '2',  null, null);
 
-  
   
   
 

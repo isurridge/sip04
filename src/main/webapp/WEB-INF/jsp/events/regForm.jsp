@@ -16,8 +16,8 @@
 <head>
 <title><c:out value="${pageTitle}" /></title>
 <style>
-ol.myList li.myList {
-	list-style-type: none;
+ol.myList li {
+	list-style: none;
 }
 </style>
 </head>

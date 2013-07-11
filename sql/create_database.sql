@@ -2,6 +2,7 @@ drop table if exists account_role;
 drop table if exists role;
 drop table if exists account;
 drop table if exists registration;
+drop table if exists event;
 
 create table registration (
     id int unsigned not null auto_increment primary key,
@@ -21,6 +22,24 @@ create table registration (
     unique index registration_idx_1 (username),
     unique index registration_idx_2 (email)
 ) engine = InnoDb;
+
+
+
+create table event (
+    id int unsigned not null auto_increment primary key,
+    chair_name varchar(250),
+    email varchar(50),
+    session_title varchar(100),
+    session_desc varchar(100),
+    session_type varchar(50),
+    session_slot varchar(50),
+    date_created timestamp default 0,
+    date_modified timestamp default current_timestamp on update current_timestamp,
+    unique index event_idx_1 (id)
+) engine = InnoDb;
+
+
+
 
 create table account (
     id int unsigned not null auto_increment primary key,
@@ -58,7 +77,12 @@ insert into registration values
     (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada','man', null, null);
 
 
-    
+  insert into event values
+    (1, 'Juan Cazares', 'juan.cazares@example.com', 'Session 1', 'Session Description 1', 'breakout', '1',  null, null),
+    (2, 'Elvira Cazares', 'elvira.cazares@example.com', 'Session 2', 'Session Description 2', 'breakout', '1',  null, null),
+    (3, 'Julia Cazares', 'julia.cazares@example.com', 'Session 3', 'Session Description 3', 'breakout', '1',  null, null);
+
+  
 
 
 insert into account values

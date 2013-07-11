@@ -58,12 +58,12 @@ public class RegistrationController {
 		
 		
         
-        mav.addObject("interestsMap", registrationService.buildSessionSelection("interest"));  
+     //   mav.addObject("interestsMap", registrationService.buildSessionSelection("interest"));  
+        mav.addObject("interestsMap", registrationService.buildSessionSelection("1"));         
         mav.addObject("registration", new RegistrationForm());  
           
         return mav; 
-     //  return new ModelAndView(VN_REG_FORM, "model", interestsMap.values()); 
-		//return VN_REG_FORM;
+
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)

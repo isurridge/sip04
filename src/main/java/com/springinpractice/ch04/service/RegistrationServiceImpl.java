@@ -8,9 +8,7 @@
 package com.springinpractice.ch04.service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -20,12 +18,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 
-import com.springinpractice.ch04.dao.AccountDao;
+import com.springinpractice.ch04.dao.EventDao;
 import com.springinpractice.ch04.dao.RegistrationDao;
-import com.springinpractice.ch04.dao.RoleDao;
-import com.springinpractice.ch04.domain.Account;
+import com.springinpractice.ch04.domain.Event;
 import com.springinpractice.ch04.domain.Registration;
-import com.springinpractice.ch04.domain.Role;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -33,35 +29,42 @@ import com.springinpractice.ch04.domain.Role;
 @Service
 @Transactional(readOnly = true)
 public class RegistrationServiceImpl implements RegistrationService {
-	private static final Logger log = LoggerFactory.getLogger(RegistrationServiceImpl.class);
-	
-	@Inject private RegistrationDao registrationDao;
+	private static final Logger log = LoggerFactory
+			.getLogger(RegistrationServiceImpl.class);
 
-	
+	@Inject
+	private RegistrationDao registrationDao;
+	@Inject
+	private EventDao eventDao;
+
 	@Override
-	@Transactional(readOnly = false)	
-    public List buildSessionSelection(String fieldName){    	
-		List<String> interestsMap = new ArrayList<String>();  
-		interestsMap.add("Judo");  
-		interestsMap.add("Basketball");  
-        interestsMap.add("Ping-Pong");
-    	return interestsMap;
-    }
-	
-	
+	@Transactional(readOnly = false)
+	public List buildSessionSelection(String fieldName) {
+
+		List<String> interestsMap = new ArrayList<String>();
+		for (Event lst : eventDao.findAllBreakouts()) {
+			log.debug(lst.getSessionTitle());
+			log.debug("Slot #: " + lst.getSessionSlot() + "   field name: " + fieldName);
+			if (lst.getSessionSlot().equals(fieldName)) {
+				interestsMap.add(lst.getSessionTitle());
+			}
+		}
+
+		return interestsMap;
+	}
+
 	@Override
-	@Transactional(readOnly = false)	
-	public boolean addRegistration(Registration registration,  Errors errors) {
-		
+	@Transactional(readOnly = false)
+	public boolean addRegistration(Registration registration, Errors errors) {
+
 		boolean valid = !errors.hasErrors();
-		
+
 		log.debug(registration.getInterest().toString());
 		if (valid) {
 			registrationDao.create(registration);
 		}
-		
+
 		return valid;
 	}
-	
 
 }

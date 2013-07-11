@@ -48,9 +48,11 @@ public class RegistrationServiceImpl implements RegistrationService {
 			if (lst.getSessionSlot().equals(fieldName)) {
 				interestsMap.add(lst.getSessionTitle());
 			}
-			if(interestsMap.isEmpty()){
-				interestsMap.add("No Scheduled Session at this time");
-			}
+
+		}
+		
+		if(interestsMap.isEmpty()){
+			interestsMap.add("No Scheduled Session at this time");
 		}
 
 		return interestsMap;

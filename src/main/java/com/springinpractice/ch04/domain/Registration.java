@@ -147,7 +147,7 @@ public class Registration {
     }
 
     public void setBreakout2(String breakout2) {
-        this.breakout3 = breakout2;
+        this.breakout2 = breakout2;
     }
     
     

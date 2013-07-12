@@ -36,7 +36,7 @@ public class Registration {
 	private Long id;
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private Date dateCreated;
-	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10;
+	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10, hotelArrive, hotelDepart;
 	
 	
 	@Id
@@ -230,9 +230,7 @@ public class Registration {
         this.breakout9 = breakout9;
     }
     
-    
-    
-	@Column(name = "breakout10")	
+    @Column(name = "breakout10")	
     public String getBreakout10() {
         return breakout10;
     }
@@ -241,8 +239,31 @@ public class Registration {
         this.breakout10 = breakout10;
     }
     
-
     
+    
+    
+
+    @Column(name = "hotel_arrive")	
+    public String getHotelArrive() {
+        return hotelArrive;
+    }
+
+    public void setHotelArrive(String hotelArrive) {
+        this.hotelArrive = hotelArrive;
+    }
+    
+
+    @Column(name = "hotel_depart")	
+    public String getHotelDepart() {
+        return hotelDepart;
+    }
+
+    public void setHotelDepart(String hotelDepart) {
+        this.hotelDepart = hotelDepart;
+    }
+    
+    
+
     
     
     

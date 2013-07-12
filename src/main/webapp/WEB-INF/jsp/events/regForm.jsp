@@ -154,6 +154,42 @@ ol.myList li {
 			</div>
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.hotelArrive" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input path="hotelArrive" cssClass="short"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="hotelArrive">
+						<div class="errorMessage">
+							<form:errors path="hotelArrive" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.hotelDepart" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input path="hotelDepart" cssClass="short"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="hotelDepart">
+						<div class="errorMessage">
+							<form:errors path="hotelDepart" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>			
+			
+			
+			
+			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.ada" />
 				</div>
 				<div class="yui-u">

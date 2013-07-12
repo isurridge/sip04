@@ -46,7 +46,8 @@ public class RegistrationController {
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "breakout1",
-			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10"
+			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
+			"hotelArrive", "hotelDepart"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -100,6 +101,17 @@ public class RegistrationController {
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
 		registration.setBreakout1(form.getBreakout1());
+		registration.setBreakout2(form.getBreakout2());
+		registration.setBreakout3(form.getBreakout3());
+		registration.setBreakout4(form.getBreakout4());
+		registration.setBreakout5(form.getBreakout5());
+		registration.setBreakout6(form.getBreakout6());
+		registration.setBreakout7(form.getBreakout7());
+		registration.setBreakout8(form.getBreakout8());
+		registration.setBreakout9(form.getBreakout9());
+		registration.setBreakout10(form.getBreakout10());
+		registration.setHotelArrive(form.getHotelArrive());
+		registration.setHotelDepart(form.getHotelDepart());
 		return registration;
 	}
 }

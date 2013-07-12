@@ -28,8 +28,7 @@ import org.hibernate.validator.constraints.Email;
 
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
-	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10;
-		
+	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10, hotelArrive, hotelDepart;	
 	
 
 	
@@ -217,6 +216,37 @@ public class RegistrationForm {
     }
     
 
+    
+    
+    
+    
+    
+    
+    
+    @Column(name = "hotel_arrive")	
+    public String getHotelArrive() {
+        return hotelArrive;
+    }
+
+    public void setHotelArrive(String hotelArrive) {
+        this.hotelArrive = hotelArrive;
+    }
+    
+
+    @Column(name = "hotel_depart")	
+    public String getHotelDepart() {
+        return hotelDepart;
+    }
+
+    public void setHotelDepart(String hotelDepart) {
+        this.hotelDepart = hotelDepart;
+    }
+    
+    
+    
+    
+    
+    
 	
 	
 
@@ -233,6 +263,8 @@ public class RegistrationForm {
 			.append("ada", ada)
 			.append("contactName", contactName)
 			.append("breakout1", breakout1)
+			.append("hotelArrive", hotelArrive)
+			.append("hotelDepart", hotelDepart)
 	.toString();			
 	}		
 }

@@ -194,7 +194,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="ada" cssClass="short"
+						<form:textarea path="ada" cssClass="short"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="ada">

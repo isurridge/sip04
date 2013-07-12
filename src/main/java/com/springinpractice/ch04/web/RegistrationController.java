@@ -37,7 +37,7 @@ import com.springinpractice.ch04.service.RegistrationService;
 public class RegistrationController {
 	private static final String VN_REG_FORM = "events/regForm";
 	private static final String VN_REG_OK = "redirect:events/reg_ok.html";
-
+	
 	
 	
 	@Inject private RegistrationService registrationService;
@@ -56,8 +56,7 @@ public class RegistrationController {
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView getRegistrationForm(Model model) {
-		ModelAndView mav = new ModelAndView(VN_REG_FORM);  
-		
+	    ModelAndView mav = new ModelAndView(VN_REG_FORM);
 		mav.addObject("breakout1Map", registrationService.buildSessionSelection("1"));       
 		mav.addObject("breakout2Map", registrationService.buildSessionSelection("2"));  
 		mav.addObject("breakout3Map", registrationService.buildSessionSelection("3"));  

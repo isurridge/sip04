@@ -59,32 +59,22 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public String getRegistrationForm(Model model) {
+	public ModelAndView getRegistrationForm(Model model) {
 		
-	//	model.addAttribute("breakout1Map", registrationService.buildSessionSelection("1"));       
-	/*	model.addAttribute("breakout2Map", registrationService.buildSessionSelection("2"));  
-		model.addAttribute("breakout3Map", registrationService.buildSessionSelection("3"));  
-		model.addAttribute("breakout4Map", registrationService.buildSessionSelection("4"));  
-		model.addAttribute("breakout5Map", registrationService.buildSessionSelection("5"));  
-		model.addAttribute("breakout6Map", registrationService.buildSessionSelection("6"));  
-		model.addAttribute("breakout7Map", registrationService.buildSessionSelection("7"));  
-		model.addAttribute("breakout8Map", registrationService.buildSessionSelection("8"));  
-		model.addAttribute("breakout9Map", registrationService.buildSessionSelection("9"));  
-		model.addAttribute("breakout10Map", registrationService.buildSessionSelection("10"));  */
+
+		Map<String, List> map = new HashMap<String, List>();
+        map.putAll(loadBreakouts());
+        model.addAllAttributes(map);
+        model.addAttribute("registration", new RegistrationForm() );
       
-        Map referenceData = new HashMap();
-        List<String> hobbiesList = new ArrayList<String>();
-        hobbiesList.add("Gardening");
-        hobbiesList.add("Listening Music");
-        hobbiesList.add("Writing Technical Tutorials");
-        referenceData.put("breakout1Map", hobbiesList);
-  
-     //   return referenceData;
+        Object[] arr = model.asMap().values().toArray();
+        for(int i = 0; i < arr.length; i++){
+        
+        log.debug("Attributes: " + arr[i].toString());
+        
+        }
 		
-    	model.addAttribute("breakout1Map", hobbiesList); 
-		
-		model.addAttribute("registration", new RegistrationForm());
-		return VN_REG_FORM;
+		return new ModelAndView(VN_REG_FORM, "model", model );
 
    
 
@@ -98,27 +88,36 @@ public class RegistrationController {
 			log.debug("result.getModel():   "  + form.getBreakout1());
    
 			
-	        Map referenceData = new HashMap();
-	        List<String> hobbiesList = new ArrayList<String>();
-	        hobbiesList.add("Gardening");
-	        hobbiesList.add("Listening Music");
-	        hobbiesList.add("Writing Technical Tutorials");
+		Map model = loadBreakouts();
 			
 		registrationService.addRegistration(toRegistration(form), result);
-		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "breakout1Map", hobbiesList ): new ModelAndView (VN_REG_OK));
+		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "model", model ): new ModelAndView (VN_REG_OK));
 	}
 	
 	
+	
+	private Map loadBreakouts(){
+		
+        Map<String, List<String>> referenceData = new HashMap<String, List<String>>();
+
+        referenceData.put("breakout1Map", registrationService.buildSessionSelection("1"));
+        referenceData.put("breakout2Map", registrationService.buildSessionSelection("2"));  
+        referenceData.put("breakout3Map", registrationService.buildSessionSelection("3"));  
+        referenceData.put("breakout4Map", registrationService.buildSessionSelection("4"));  
+        referenceData.put("breakout5Map", registrationService.buildSessionSelection("5"));  
+        referenceData.put("breakout6Map", registrationService.buildSessionSelection("6"));  
+        referenceData.put("breakout7Map", registrationService.buildSessionSelection("7"));  
+        referenceData.put("breakout8Map", registrationService.buildSessionSelection("8"));  
+        referenceData.put("breakout9Map", registrationService.buildSessionSelection("9"));  
+        referenceData.put("breakout10Map", registrationService.buildSessionSelection("10"));
+		return referenceData;
+		
+	}
 
 	
 	
 	private static Registration toRegistration(RegistrationForm form) {
-		
-
-	//	form.setBreakout1Map(hobbiesList);
-		
-//	   	log.debug("");
-		
+	
 		Registration registration = new Registration();
 		registration.setUsername(form.getUsername());
 		registration.setFirstName(form.getFirstName());
@@ -131,8 +130,7 @@ public class RegistrationController {
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
 		registration.setBreakout1(form.getBreakout1());
-
-	/*	registration.setBreakout2(form.getBreakout2());
+		registration.setBreakout2(form.getBreakout2());
 		registration.setBreakout3(form.getBreakout3());
 		registration.setBreakout4(form.getBreakout4());
 		registration.setBreakout5(form.getBreakout5());
@@ -140,7 +138,7 @@ public class RegistrationController {
 		registration.setBreakout7(form.getBreakout7());
 		registration.setBreakout8(form.getBreakout8());
 		registration.setBreakout9(form.getBreakout9());
-		registration.setBreakout10(form.getBreakout10());  */
+		registration.setBreakout10(form.getBreakout10());  
 		registration.setHotelArrive(form.getHotelArrive());
 		registration.setHotelDepart(form.getHotelDepart());
 		return registration;

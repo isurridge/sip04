@@ -204,6 +204,232 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout1" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout1Map}" path="breakout1"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout1">
+						<div class="errorMessage">
+							<form:errors path="breakout1" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout2" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout2Map}" path="breakout2"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout2">
+						<div class="errorMessage">
+							<form:errors path="breakout2" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout3" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout3Map}" path="breakout3"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout3">
+						<div class="errorMessage">
+							<form:errors path="breakout3" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout4" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout4Map}" path="breakout4"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout4">
+						<div class="errorMessage">
+							<form:errors path="breakout4" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout5" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout5Map}" path="breakout5"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout5">
+						<div class="errorMessage">
+							<form:errors path="breakout5" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout6" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout6Map}" path="breakout6"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout6">
+						<div class="errorMessage">
+							<form:errors path="breakout6" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout7" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout7Map}" path="breakout7"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout7">
+						<div class="errorMessage">
+							<form:errors path="breakout7" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout8" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout8Map}" path="breakout8"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout8">
+						<div class="errorMessage">
+							<form:errors path="breakout8" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+   
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout9" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout9Map}" path="breakout9"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout9">
+						<div class="errorMessage">
+							<form:errors path="breakout9" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.breakout10" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<ol class="myList">
+							<form:radiobuttons items="${model.breakout10Map}" path="breakout10"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="breakout10">
+						<div class="errorMessage">
+							<form:errors path="breakout10" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+
+
+
+
+
+
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.contactName" />
@@ -249,24 +475,7 @@ ol.myList li {
 
 
 
-			<div class="gridRow yui-gf">
-				<div class="fieldLabel yui-u first">
-					<spring:message code="newUserRegistration.label.breakout1" />
-				</div>
-				<div class="yui-u">
-					<div>
-						<ol class="myList">
-							<form:radiobuttons items="${breakout1Map}" path="breakout1"
-								cssClass="myList" element="li" cssErrorClass="error" />
-						</ol>
-					</div>
-					<form:errors path="breakout1">
-						<div class="errorMessage">
-							<form:errors path="breakout1" htmlEscape="false" />
-						</div>
-					</form:errors>
-				</div>
-			</div>
+
 
 
 

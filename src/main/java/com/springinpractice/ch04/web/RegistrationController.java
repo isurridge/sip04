@@ -15,6 +15,8 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springinpractice.ch04.domain.Registration;
 import com.springinpractice.ch04.service.RegistrationService;
+import com.springinpractice.ch04.service.RegistrationServiceImpl;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -37,7 +40,8 @@ import com.springinpractice.ch04.service.RegistrationService;
 public class RegistrationController {
 	private static final String VN_REG_FORM = "events/regForm";
 	private static final String VN_REG_OK = "redirect:events/reg_ok.html";
-	
+	private static final Logger log = LoggerFactory
+			.getLogger(RegistrationController.class);
 	
 	
 	@Inject private RegistrationService registrationService;
@@ -55,32 +59,53 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public ModelAndView getRegistrationForm(Model model) {
-	    ModelAndView mav = new ModelAndView(VN_REG_FORM);
-		mav.addObject("breakout1Map", registrationService.buildSessionSelection("1"));       
-		mav.addObject("breakout2Map", registrationService.buildSessionSelection("2"));  
-		mav.addObject("breakout3Map", registrationService.buildSessionSelection("3"));  
-		mav.addObject("breakout4Map", registrationService.buildSessionSelection("4"));  
-		mav.addObject("breakout5Map", registrationService.buildSessionSelection("5"));  
-		mav.addObject("breakout6Map", registrationService.buildSessionSelection("6"));  
-		mav.addObject("breakout7Map", registrationService.buildSessionSelection("7"));  
-		mav.addObject("breakout8Map", registrationService.buildSessionSelection("8"));  
-		mav.addObject("breakout9Map", registrationService.buildSessionSelection("9"));  
-		mav.addObject("breakout10Map", registrationService.buildSessionSelection("10"));  
-        mav.addObject("registration", new RegistrationForm());  
-          
-        return mav; 
+	public String getRegistrationForm(Model model) {
+		
+	//	model.addAttribute("breakout1Map", registrationService.buildSessionSelection("1"));       
+	/*	model.addAttribute("breakout2Map", registrationService.buildSessionSelection("2"));  
+		model.addAttribute("breakout3Map", registrationService.buildSessionSelection("3"));  
+		model.addAttribute("breakout4Map", registrationService.buildSessionSelection("4"));  
+		model.addAttribute("breakout5Map", registrationService.buildSessionSelection("5"));  
+		model.addAttribute("breakout6Map", registrationService.buildSessionSelection("6"));  
+		model.addAttribute("breakout7Map", registrationService.buildSessionSelection("7"));  
+		model.addAttribute("breakout8Map", registrationService.buildSessionSelection("8"));  
+		model.addAttribute("breakout9Map", registrationService.buildSessionSelection("9"));  
+		model.addAttribute("breakout10Map", registrationService.buildSessionSelection("10"));  */
+      
+        Map referenceData = new HashMap();
+        List<String> hobbiesList = new ArrayList<String>();
+        hobbiesList.add("Gardening");
+        hobbiesList.add("Listening Music");
+        hobbiesList.add("Writing Technical Tutorials");
+        referenceData.put("breakout1Map", hobbiesList);
+  
+     //   return referenceData;
+		
+    	model.addAttribute("breakout1Map", hobbiesList); 
+		
+		model.addAttribute("registration", new RegistrationForm());
+		return VN_REG_FORM;
+
+   
 
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public String postRegistrationForm(
-			@ModelAttribute("registration") @Valid RegistrationForm form,
-			BindingResult result) {
-		
-		
+	public ModelAndView postRegistrationForm(
+			@ModelAttribute("registration") @Valid RegistrationForm form, BindingResult result) {
+			
+			
+			log.debug("result.getModel():   "  + form.getBreakout1());
+   
+			
+	        Map referenceData = new HashMap();
+	        List<String> hobbiesList = new ArrayList<String>();
+	        hobbiesList.add("Gardening");
+	        hobbiesList.add("Listening Music");
+	        hobbiesList.add("Writing Technical Tutorials");
+			
 		registrationService.addRegistration(toRegistration(form), result);
-		return (result.hasErrors() ? VN_REG_FORM : VN_REG_OK);
+		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "breakout1Map", hobbiesList ): new ModelAndView (VN_REG_OK));
 	}
 	
 	
@@ -88,6 +113,12 @@ public class RegistrationController {
 	
 	
 	private static Registration toRegistration(RegistrationForm form) {
+		
+
+	//	form.setBreakout1Map(hobbiesList);
+		
+//	   	log.debug("");
+		
 		Registration registration = new Registration();
 		registration.setUsername(form.getUsername());
 		registration.setFirstName(form.getFirstName());
@@ -100,7 +131,8 @@ public class RegistrationController {
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
 		registration.setBreakout1(form.getBreakout1());
-		registration.setBreakout2(form.getBreakout2());
+
+	/*	registration.setBreakout2(form.getBreakout2());
 		registration.setBreakout3(form.getBreakout3());
 		registration.setBreakout4(form.getBreakout4());
 		registration.setBreakout5(form.getBreakout5());
@@ -108,7 +140,7 @@ public class RegistrationController {
 		registration.setBreakout7(form.getBreakout7());
 		registration.setBreakout8(form.getBreakout8());
 		registration.setBreakout9(form.getBreakout9());
-		registration.setBreakout10(form.getBreakout10());
+		registration.setBreakout10(form.getBreakout10());  */
 		registration.setHotelArrive(form.getHotelArrive());
 		registration.setHotelDepart(form.getHotelDepart());
 		return registration;

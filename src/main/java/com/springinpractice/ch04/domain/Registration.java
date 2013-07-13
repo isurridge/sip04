@@ -37,7 +37,7 @@ public class Registration {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private Date dateCreated;
 	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10, hotelArrive, hotelDepart;
-	
+	private List breakout1Map;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -238,6 +238,12 @@ public class Registration {
     public void setBreakout10(String breakout10) {
         this.breakout10 = breakout10;
     }
+    
+    
+
+    
+    
+    
     
     
     

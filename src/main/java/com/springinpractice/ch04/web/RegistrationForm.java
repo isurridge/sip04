@@ -29,7 +29,7 @@ import org.hibernate.validator.constraints.Email;
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone, contactName, travelArranger, company, ada;
 	private String breakout1, breakout2, breakout3, breakout4, breakout5, breakout6, breakout7, breakout8, breakout9, breakout10, hotelArrive, hotelDepart;	
-	
+	private List breakout1Map;
 
 	
 	@NotNull
@@ -216,7 +216,14 @@ public class RegistrationForm {
     }
     
 
-    
+	public List getBreakout1Map() {
+	        return breakout1Map;
+	}
+	
+	public void setBreakout1Map(List breakout1Map) {
+	        this.breakout1Map = breakout1Map;
+	}
+
     
     
     

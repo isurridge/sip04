@@ -66,6 +66,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		if (valid) {
 			registrationDao.create(registration);
+		}else{
+			log.debug("Inside addRegistration:  " + registration.getBreakout1() + "/////////////////////////////////////////////////");
+		//	log.debug("registration.getBreakout1Map() :  " + registration.getBreakout1Map() + "/////////////////////////////////////////////////");
+			
 		}
 
 		return valid;

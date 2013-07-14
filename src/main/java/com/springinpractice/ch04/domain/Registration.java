@@ -253,6 +253,8 @@ public class Registration {
 		this.breakout10 = breakout10;
 	}
 
+	
+	@NotNull
 	@Column(name = "hotel_arrive")
 	public Date getHotelArrive() {
 		return hotelArrive;
@@ -262,6 +264,7 @@ public class Registration {
 		this.hotelArrive = hotelArrive;
 	}
 
+	@NotNull
 	@Column(name = "hotel_departure")
 	public Date getHotelDeparture() {
 		return hotelDeparture;
@@ -271,7 +274,7 @@ public class Registration {
 		this.hotelDeparture = hotelDeparture;
 	}
 	
-	
+	@NotNull
 	@Size(min = 1, max = 100)
 	@Column(name = "incidentals")
 	public String getIncidentals() {

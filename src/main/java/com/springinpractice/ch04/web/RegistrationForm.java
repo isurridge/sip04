@@ -131,6 +131,10 @@ public class RegistrationForm {
 		this.contactPhone = contactPhone;
 	}
 
+	
+	
+	
+	@NotNull
 	@Size(min = 1, max = 100)
 	@Column(name = "incidentals")
 	public String getIncidentals() {
@@ -231,6 +235,10 @@ public class RegistrationForm {
 		this.breakout10 = breakout10;
 	}
 
+	
+	
+	
+	@NotNull
 	@Column(name = "hotel_arrive")
 	public Date getHotelArrive() {
 		return hotelArrive;
@@ -240,6 +248,11 @@ public class RegistrationForm {
 		this.hotelArrive = hotelArrive;
 	}
 
+	
+	
+	
+	
+	@NotNull
 	@Column(name = "hotel_departure")
 	public Date getHotelDeparture() {
 		return hotelDeparture;

@@ -8,6 +8,7 @@
 package com.springinpractice.ch04.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,6 +36,7 @@ public class Registration {
 			breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals;
 	private Date dateCreated, hotelArrive, hotelDeparture;
+	private String diet;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -286,6 +288,20 @@ public class Registration {
 	}
 	
 	
+	
+	
+
+	@Column(name = "diet")
+	public String getDiet() {
+		return diet;
+	}
+
+	public void setDiet(String diet) {
+		this.diet = diet;
+	}
+	
+	
+	
 
 	@Column(name = "date_created")
 	public Date getDateCreated() {
@@ -295,4 +311,6 @@ public class Registration {
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
+
+
 }

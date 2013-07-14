@@ -238,7 +238,25 @@ ol.myList li {
 			
 			
 			
-			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first" >
+					<spring:message code="newUserRegistration.label.diet" />
+				</div>
+				<div class="yui-u">
+					<div>
+
+						<ol class="myList">
+							<form:radiobuttons items="${model.dietList}" path="diet"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="diet">
+						<div class="errorMessage">
+							<form:errors path="diet" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
 			
 			
 			

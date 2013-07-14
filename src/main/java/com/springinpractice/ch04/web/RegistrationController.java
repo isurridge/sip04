@@ -54,7 +54,7 @@ public class RegistrationController {
 		binder.setAllowedFields(new String[] { 
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
-			"hotelArrive", "hotelDeparture", "incidentals"
+			"hotelArrive", "hotelDeparture", "incidentals", "diet"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -105,7 +105,7 @@ public class RegistrationController {
 	        log.debug("Attributes Post Form: " + form.toString());
 			
 		registrationService.addRegistration(toRegistration(form), result);
-		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "model", model ): new ModelAndView (VN_REG_OK));
+		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "model", model ): new ModelAndView (VN_REG_OK, "model", model ));
 	}
 	
 	
@@ -133,6 +133,7 @@ public class RegistrationController {
         referenceData.put("breakout9Map", registrationService.buildSessionSelection("9"));  
         referenceData.put("breakout10Map", registrationService.buildSessionSelection("10"));
         referenceData.put("incidentalsList", registrationService.loadIncidentals());
+        referenceData.put("dietList", registrationService.loadDiet());
 		return referenceData;
 		
 	}
@@ -165,6 +166,7 @@ public class RegistrationController {
 		registration.setBreakout10(form.getBreakout10());  
 		registration.setHotelDeparture(form.getHotelDeparture());
 		registration.setHotelArrive(form.getHotelArrive());
+		registration.setDiet(form.getDiet());
 		
 		return registration;
 	}

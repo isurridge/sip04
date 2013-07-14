@@ -8,6 +8,7 @@
 package com.springinpractice.ch04.web;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
@@ -25,8 +26,9 @@ import org.hibernate.validator.constraints.Email;
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet;
 	private Date hotelArrive, hotelDeparture;
+	
 
 	@NotNull
 	@Size(min = 1, max = 50)
@@ -261,6 +263,26 @@ public class RegistrationForm {
 	public void setHotelDeparture(Date hotelDeparture) {
 		this.hotelDeparture = hotelDeparture;
 	}
+	
+	
+	
+	
+	
+	
+	
+	@Size(min = 1, max = 100)
+	@Column(name = "diet")
+	public String getDiet() {
+		return diet;
+	}
+
+	public void setDiet(String diet) {
+		this.diet = diet;
+	}
+	
+	
+	
+	
 
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -278,6 +300,8 @@ public class RegistrationForm {
 				.append("breakout9", breakout9)
 				.append("breakout10", breakout10)
 				.append("hotelArrive", hotelArrive)
-				.append("hotelDeparture", hotelDeparture).toString();
+				.append("hotelDeparture", hotelDeparture)
+				.append("diet", diet)
+				.toString();
 	}
 }

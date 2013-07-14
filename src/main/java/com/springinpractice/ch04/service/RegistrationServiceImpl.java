@@ -83,4 +83,26 @@ public class RegistrationServiceImpl implements RegistrationService {
 		
 		return incidentals;
 	}
+	
+	@Override
+	@Transactional(readOnly = false)
+	public List loadDiet() {
+		
+		List<String> diet = new ArrayList();
+		diet.add("Vegan");
+		diet.add("Vegeterian");
+		diet.add("No Carb");
+		
+		return diet;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

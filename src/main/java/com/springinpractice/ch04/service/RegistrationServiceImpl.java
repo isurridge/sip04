@@ -66,13 +66,21 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		if (valid) {
 			registrationDao.create(registration);
-		}else{
-			log.debug("Inside addRegistration:  " + registration.getBreakout1() + "/////////////////////////////////////////////////");
-		//	log.debug("registration.getBreakout1Map() :  " + registration.getBreakout1Map() + "/////////////////////////////////////////////////");
-			
 		}
 
 		return valid;
 	}
-
+	
+	
+	@Override
+	@Transactional(readOnly = false)
+	public List loadIncidentals() {
+		
+		List<String> incidentals = new ArrayList();
+		incidentals.add("My corporate or personal credit card");
+		incidentals.add("My profit center manager's credit card");
+		incidentals.add("No card available - need to use corporate account");
+		
+		return incidentals;
+	}
 }

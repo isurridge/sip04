@@ -168,25 +168,31 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
+			
+			
+			
+			
+
+
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.hotelDepart" />
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="hotelDepart" cssClass="short"
+						<form:input path="hotelDeparture" cssClass="short"
 							cssErrorClass="short error" />
 					</div>
-					<form:errors path="hotelDepart">
+					<form:errors path="hotelDeparture">
 						<div class="errorMessage">
-							<form:errors path="hotelDepart" htmlEscape="false" />
+							<form:errors path="hotelDeparture" htmlEscape="false" />
 						</div>
 					</form:errors>
 				</div>
-			</div>			
+			</div>
 			
 			
-			
+
 			
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
@@ -194,7 +200,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:textarea path="ada" cssClass="short"
+						<form:input path="ada" cssClass="short"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="ada">
@@ -204,8 +210,39 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
+			
+			
+			
+			
+			
 
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first" >
+					<spring:message code="newUserRegistration.label.incidentals" />
+				</div>
+				<div class="yui-u">
+					<div>
 
+						<ol class="myList">
+							<form:radiobuttons items="${model.incidentalsList}" path="incidentals"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="incidentals">
+						<div class="errorMessage">
+							<form:errors path="incidentals" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			 
 
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">

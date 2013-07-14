@@ -49,9 +49,9 @@ public class RegistrationController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setAllowedFields(new String[] { 
-			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada", "breakout1",
+			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
-			"hotelArrive", "hotelDepart"
+			"hotelArrive", "hotelDeparture", "incidentals"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -62,15 +62,16 @@ public class RegistrationController {
 	public ModelAndView getRegistrationForm(Model model) {
 		
 
-		Map<String, List> map = new HashMap<String, List>();
-        map.putAll(loadBreakouts());
+		Map map = new HashMap();
+        map.putAll(loadRadioButtons());
+        
         model.addAllAttributes(map);
         model.addAttribute("registration", new RegistrationForm() );
       
         Object[] arr = model.asMap().values().toArray();
         for(int i = 0; i < arr.length; i++){
         
-        log.debug("Attributes: " + arr[i].toString());
+        log.debug("Attributes Get: " + arr[i].toString() );
         
         }
 		
@@ -80,15 +81,18 @@ public class RegistrationController {
 
 	}
 	
+
+
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ModelAndView postRegistrationForm(
-			@ModelAttribute("registration") @Valid RegistrationForm form, BindingResult result) {
+			@ModelAttribute("registration") @Valid RegistrationForm form, BindingResult result, Model model) {
 			
-			
-			log.debug("result.getModel():   "  + form.getBreakout1());
-   
-			
-		Map model = loadBreakouts();
+			Map map = new HashMap();
+	        map.putAll(loadRadioButtons());
+	        
+			model.addAllAttributes(map);
+		
+	        log.debug("Attributes Post Form: " + form.toString());
 			
 		registrationService.addRegistration(toRegistration(form), result);
 		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "model", model ): new ModelAndView (VN_REG_OK));
@@ -96,7 +100,15 @@ public class RegistrationController {
 	
 	
 	
-	private Map loadBreakouts(){
+	
+	
+	
+	
+	
+
+	
+
+	private Map loadRadioButtons(){
 		
         Map<String, List<String>> referenceData = new HashMap<String, List<String>>();
 
@@ -110,6 +122,7 @@ public class RegistrationController {
         referenceData.put("breakout8Map", registrationService.buildSessionSelection("8"));  
         referenceData.put("breakout9Map", registrationService.buildSessionSelection("9"));  
         referenceData.put("breakout10Map", registrationService.buildSessionSelection("10"));
+        referenceData.put("incidentalsList", registrationService.loadIncidentals());
 		return referenceData;
 		
 	}
@@ -127,6 +140,7 @@ public class RegistrationController {
 		registration.setCompany(form.getCompany());
 		registration.setTravelArranger(form.getTravelArranger());
 		registration.setAda(form.getAda());
+		registration.setIncidentals(form.getIncidentals());
 		registration.setContactName(form.getContactName());
 		registration.setContactPhone(form.getContactPhone());
 		registration.setBreakout1(form.getBreakout1());
@@ -139,8 +153,9 @@ public class RegistrationController {
 		registration.setBreakout8(form.getBreakout8());
 		registration.setBreakout9(form.getBreakout9());
 		registration.setBreakout10(form.getBreakout10());  
+		registration.setHotelDeparture(form.getHotelDeparture());
 		registration.setHotelArrive(form.getHotelArrive());
-		registration.setHotelDepart(form.getHotelDepart());
+		
 		return registration;
 	}
 }

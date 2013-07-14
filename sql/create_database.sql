@@ -15,7 +15,8 @@ create table registration (
     contact_name varchar(50) not null,
     travel_arranger varchar(50),
     company varchar(50),
-    ada varchar(200),
+    ada varchar(300),
+    incidentals varchar(75),
     breakout1 varchar(100),
     breakout2 varchar(100),
     breakout3 varchar(100),
@@ -27,7 +28,7 @@ create table registration (
     breakout9 varchar(100),
     breakout10 varchar(100),
     hotel_arrive  date,
-    hotel_depart  date,
+    hotel_departure  date,
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),
@@ -83,9 +84,9 @@ create table account_role (
 ) engine = InnoDb;
 
 insert into registration values
-    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada','1', '2', '3', '4', '5', '6', '7', '8', '9', '10',null, null, null, null),
-    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman','ada','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', null, null, null, null),
-    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', null, null, null, null);
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',null, null, null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', null, null, null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', null, null, null, null);
 
 
   insert into event values

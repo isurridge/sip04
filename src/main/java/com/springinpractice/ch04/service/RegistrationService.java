@@ -20,4 +20,5 @@ public interface RegistrationService {
 
 	boolean addRegistration(Registration registration, Errors errors);
 	List buildSessionSelection(String fieldName);
+    List loadIncidentals();
 }

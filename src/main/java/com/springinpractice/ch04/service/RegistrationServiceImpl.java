@@ -86,14 +86,34 @@ public class RegistrationServiceImpl implements RegistrationService {
 	
 	@Override
 	@Transactional(readOnly = false)
-	public List loadDiet() {
+	public List<String> loadDiet() {
 		
-		List<String> diet = new ArrayList();
+		List<String> diet = new ArrayList<String>();
 		diet.add("Vegan");
 		diet.add("Vegeterian");
 		diet.add("No Carb");
 		
 		return diet;
+	}
+
+	@Override
+	public List<String> loadActivities() {
+		
+		List<String> interestsMap = new ArrayList<String>();
+		for (Event lst : eventDao.findAllActivities()) {
+			log.debug(lst.getSessionTitle());
+
+			if (!lst.getSessionTitle().equals(null)) {
+				interestsMap.add(lst.getSessionTitle());
+			}
+
+		}
+		
+		if(interestsMap.isEmpty()){
+			interestsMap.add("No Scheduled Activies at this time");
+		}
+
+		return interestsMap;
 	}
 	
 	

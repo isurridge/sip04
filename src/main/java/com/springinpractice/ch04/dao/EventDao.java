@@ -24,4 +24,6 @@ public interface EventDao extends Dao<Event> {
 	
     List<Event> findAllBreakouts();
     
+    List<Event> findAllActivities();
+    
 }

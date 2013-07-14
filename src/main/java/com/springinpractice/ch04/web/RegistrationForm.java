@@ -17,6 +17,8 @@ import javax.validation.constraints.Size;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -26,8 +28,8 @@ import org.hibernate.validator.constraints.Email;
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet;
-	private Date hotelArrive, hotelDeparture;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities;
+	private Date hotelArrive, hotelDeparture, airportArrive,  airportDeparture, airportArriveTime, airportDepartureTime;
 	
 
 	@NotNull
@@ -241,6 +243,7 @@ public class RegistrationForm {
 	
 	
 	@NotNull
+    @DateTimeFormat(iso=ISO.DATE)
 	@Column(name = "hotel_arrive")
 	public Date getHotelArrive() {
 		return hotelArrive;
@@ -250,11 +253,8 @@ public class RegistrationForm {
 		this.hotelArrive = hotelArrive;
 	}
 
-	
-	
-	
-	
 	@NotNull
+    @DateTimeFormat(iso=ISO.DATE)
 	@Column(name = "hotel_departure")
 	public Date getHotelDeparture() {
 		return hotelDeparture;
@@ -270,6 +270,58 @@ public class RegistrationForm {
 	
 	
 	
+
+
+    @DateTimeFormat(iso=ISO.DATE)
+	@Column(name = "airport_arrive")
+	public Date getAirportArrive() {
+		return airportArrive;
+	}
+
+	public void setAirportArrive(Date airportArrive) {
+		this.airportArrive = airportArrive;
+	}
+
+
+    @DateTimeFormat(iso=ISO.DATE)
+	@Column(name = "airport_departure")
+	public Date getAirportDeparture() {
+		return airportDeparture;
+	}
+
+	public void setAirportDeparture(Date airportDeparture) {
+		this.airportDeparture = airportDeparture;
+	}
+
+    @DateTimeFormat(iso=ISO.TIME)
+	@Column(name = "airport_arrive_time")
+	public Date getAirportArriveTime() {
+		return airportArriveTime;
+	}
+
+	public void setAirportArriveTime(Date airportArriveTime) {
+		this.airportArriveTime = airportArriveTime;
+	}
+
+    @DateTimeFormat(iso=ISO.TIME)
+	@Column(name = "airport_departure_time")
+	public Date getAirportDepartureTime() {
+		return airportDepartureTime;
+	}
+
+	public void setAirportDepartureTime(Date airportDepartureTime) {
+		this.airportDepartureTime = airportDepartureTime;
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Size(min = 1, max = 100)
 	@Column(name = "diet")
 	public String getDiet() {
@@ -278,6 +330,31 @@ public class RegistrationForm {
 
 	public void setDiet(String diet) {
 		this.diet = diet;
+	}
+	
+	
+
+	
+	
+	@Size(min = 1, max = 250)
+	@Column(name = "allergies")
+	public String getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(String allergies) {
+		this.allergies = allergies;
+	}
+	
+	@NotNull
+	@Size(min = 1, max = 100)
+	@Column(name = "activities")
+	public String getActivities() {
+		return activities;
+	}
+
+	public void setActivities(String activities) {
+		this.activities = activities;
 	}
 	
 	
@@ -301,7 +378,11 @@ public class RegistrationForm {
 				.append("breakout10", breakout10)
 				.append("hotelArrive", hotelArrive)
 				.append("hotelDeparture", hotelDeparture)
+				.append("airportArrive", airportArrive)
+				.append("airportDeparture", airportDeparture)
 				.append("diet", diet)
+				.append("allergies", allergies)
+				.append("activities", activities)
 				.toString();
 	}
 }

@@ -16,6 +16,7 @@ create table registration (
     travel_arranger varchar(50),
     company varchar(50),
     ada varchar(300),
+    activities varchar(300),
     incidentals varchar(75) not null,
     breakout1 varchar(100),
     breakout2 varchar(100),
@@ -28,8 +29,13 @@ create table registration (
     breakout9 varchar(100),
     breakout10 varchar(100),
     diet varchar(250),
+    allergies varchar(250),
     hotel_arrive  date not null,
     hotel_departure  date not null,
+    airport_arrive  date,
+    airport_departure  date,
+    airport_arrive_time  time,
+    airport_departure_time  time,   
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),
@@ -85,9 +91,9 @@ create table account_role (
 ) engine = InnoDb;
 
 insert into registration values
-    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'No Peanuts', '2013/07/07', '2013/07/07', null, null),
-    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'No Peanuts', '2013/07/07', '2013/07/07', null, null),
-    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'No Peanuts', '2013/07/07', '2013/07/07', null, null);
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Golf', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegan', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'On My Own', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegetarian', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Mountain Climbing', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Low Carb', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07',  null, null, null, null);
 
 
   insert into event values
@@ -112,7 +118,6 @@ insert into registration values
     (19, 'Julia Cazares', 'julia35.cazares@example.com', '5e - This is breakout choice 4', 'Session Description 3', 'breakout', '5',  null, null),
     (20, 'Julia Cazares', 'julia37777.cazares@example.com', '5f - This is breakout choice 4', 'Session Description 3', 'breakout', '5',  null, null),
 
-   
     (21, 'Julia Cazares', 'julia35.7cazares@example.com', '8g - This is breakout choice 4', 'Session Description 3', 'breakout', '8',  null, null),
     (22, 'Julia Cazares', 'julia37777.7cazares@example.com', '9h - This is breakout choice 4', 'Session Description 3', 'breakout', '9',  null, null),
     (23, 'Julia Cazares', 'julia77.7cazares@example.com', '10a - This is breakout choice 77', 'Session Description 10', 'breakout', '10',  null, null),
@@ -128,12 +133,13 @@ insert into registration values
     (33, 'Julia Cazares', 'julia373.7cazares@example.com', '7e - This is breakout choice 3', 'Session Description 3', 'breakout', '7',  null, null),
     (34, 'Julia Cazares', 'julia374.7cazares@example.com', '7f - This is breakout choice 3', 'Session Description 3', 'breakout', '7',  null, null),
     (35, 'Julia Cazares', 'julia35.7cazares@example.com', '7g - This is breakout choice 4', 'Session Description 3', 'breakout', '7',  null, null),
-    (37, 'Julia Cazares', 'julia37777.7cazares@example.com', '7h - This is breakout choice 4', 'Session Description 3', 'breakout', '7',  null, null);
-
+    (37, 'Julia Cazares', 'julia37777.7cazares@example.com', '7h - This is breakout choice 4', 'Session Description 3', 'breakout', '7',  null, null),
+	
     
     
-    
-    
+    (38, 'null', 'ducky.1928@cazares@gmail.com', 'Golf', 'Golf Description 3', 'Activity', 'null',  null, null),
+	(39, 'null', 'ducky.1928@cazares@gmail.com', 'Swimming', 'Golf Description 3', 'Activity', 'null',  null, null),
+    (40, 'null', 'ducky.1928@cazares@gmail.com', 'Mountain Climbing', 'Golf Description 3', 'Activity', 'null',  null, null);
     
     
   

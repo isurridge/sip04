@@ -54,13 +54,13 @@ public class RegistrationController {
 		binder.setAllowedFields(new String[] { 
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
-			"hotelArrive", "hotelDeparture", "incidentals", "diet"
+			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "incidentals", "diet", "allergies", "activities"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
 		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-		 CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true);
-	     binder.registerCustomEditor(Date.class, editor);
+	//	 CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true);
+	//     binder.registerCustomEditor(Date.class, editor);
 	}
 	
 
@@ -118,6 +118,12 @@ public class RegistrationController {
 
 	
 
+	
+	
+	
+	
+	
+	
 	private Map loadRadioButtons(){
 		
         Map<String, List<String>> referenceData = new HashMap<String, List<String>>();
@@ -132,8 +138,9 @@ public class RegistrationController {
         referenceData.put("breakout8Map", registrationService.buildSessionSelection("8"));  
         referenceData.put("breakout9Map", registrationService.buildSessionSelection("9"));  
         referenceData.put("breakout10Map", registrationService.buildSessionSelection("10"));
-        referenceData.put("incidentalsList", registrationService.loadIncidentals());
+        referenceData.put("incidentalsList", registrationService.loadIncidentals()); 
         referenceData.put("dietList", registrationService.loadDiet());
+        referenceData.put("activitiesList", registrationService.loadActivities());
 		return referenceData;
 		
 	}
@@ -164,9 +171,17 @@ public class RegistrationController {
 		registration.setBreakout8(form.getBreakout8());
 		registration.setBreakout9(form.getBreakout9());
 		registration.setBreakout10(form.getBreakout10());  
-		registration.setHotelDeparture(form.getHotelDeparture());
+		
 		registration.setHotelArrive(form.getHotelArrive());
+		registration.setHotelDeparture(form.getHotelDeparture());
+		registration.setAirportArrive(form.getAirportArrive());
+		registration.setAirportDeparture(form.getAirportDeparture());
+		registration.setAirportArriveTime(form.getAirportArriveTime());
+		registration.setAirportDepartureTime(form.getAirportDepartureTime());
+		
 		registration.setDiet(form.getDiet());
+		registration.setAllergies(form.getAllergies());
+		registration.setActivities(form.getActivities());
 		
 		return registration;
 	}

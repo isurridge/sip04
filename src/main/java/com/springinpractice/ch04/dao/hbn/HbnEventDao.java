@@ -35,7 +35,9 @@ public class HbnEventDao extends AbstractHbnDao<Event> implements EventDao {
 	private static final String SELECT_BKSESSIONS_SQL =
 		"select session_title, session_slot from event where session_type = ?";
 	
-
+	private static final String SELECT_ACTIVITIES_SQL =
+			"select session_title from event  where session_type  = ?";
+		
 
 	
 	@Inject private JdbcTemplate jdbcTemplate;
@@ -61,6 +63,25 @@ public class HbnEventDao extends AbstractHbnDao<Event> implements EventDao {
 		return breakouts;
 	}
 
+	
+	public List<Event> findAllActivities(){
+		 
+		List<Event> activities = new ArrayList<Event>();
+	 
+		List<Map<String, Object>> rows = jdbcTemplate.queryForList(SELECT_ACTIVITIES_SQL, "activity");
+		for (Map row : rows) {
+			Event event = new Event();
+			event.setSessionTitle((String)row.get("session_title"));
+			activities.add(event);
+		}
+	 
+		return activities;
+	}
+	
+	
+	
+	
+	
 	
 	
 	@Override

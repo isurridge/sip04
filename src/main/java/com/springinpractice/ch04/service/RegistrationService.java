@@ -19,7 +19,8 @@ import com.springinpractice.ch04.domain.Registration;
 public interface RegistrationService {
 
 	boolean addRegistration(Registration registration, Errors errors);
-	List buildSessionSelection(String fieldName);
-    List loadIncidentals();
-    List loadDiet();
+	List<String> buildSessionSelection(String fieldName);
+    List<String> loadIncidentals();
+    List<String> loadDiet();
+	List<String> loadActivities();
 }

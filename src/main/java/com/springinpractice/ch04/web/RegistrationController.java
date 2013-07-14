@@ -69,13 +69,13 @@ public class RegistrationController {
 	
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public ModelAndView getRegistrationForm(Model model) {
+	public String getRegistrationForm(Model model) {
 		
 
 		Map map = new HashMap();
         map.putAll(loadRadioButtons());
-        
-        model.addAllAttributes(map);
+        model.addAttribute("model", map );       
+        //model.addAllAttributes(map);
         model.addAttribute("registration", new RegistrationForm() );
       
         Object[] arr = model.asMap().values().toArray();
@@ -85,7 +85,7 @@ public class RegistrationController {
         
         }
 		
-		return new ModelAndView(VN_REG_FORM, "model", model );
+		return VN_REG_FORM;
 
    
 
@@ -94,18 +94,18 @@ public class RegistrationController {
 
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public ModelAndView postRegistrationForm(
+	public String postRegistrationForm(
 			@ModelAttribute("registration") @Valid RegistrationForm form, BindingResult result, Model model) {
 			
 			Map map = new HashMap();
 	        map.putAll(loadRadioButtons());
-	        
-			model.addAllAttributes(map);
+	        model.addAttribute("model", map );       
+	        //model.addAllAttributes(map);
 		
 	        log.debug("Attributes Post Form: " + form.toString());
 			
 		registrationService.addRegistration(toRegistration(form), result);
-		return (result.hasErrors() ? new ModelAndView(VN_REG_FORM, "model", model ): new ModelAndView (VN_REG_OK, "model", model ));
+		return (result.hasErrors() ? VN_REG_FORM: VN_REG_OK);
 	}
 	
 	

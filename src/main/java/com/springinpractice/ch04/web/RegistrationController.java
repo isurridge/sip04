@@ -7,7 +7,9 @@
  */
 package com.springinpractice.ch04.web;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +19,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,7 +59,14 @@ public class RegistrationController {
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
 		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+		 CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true);
+	     binder.registerCustomEditor(Date.class, editor);
 	}
+	
+
+	
+	
+	
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView getRegistrationForm(Model model) {

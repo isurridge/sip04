@@ -8,7 +8,6 @@
 package com.springinpractice.ch04.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,9 +20,10 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -36,9 +36,8 @@ public class Registration {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities;
-	private Date dateCreated, hotelArrive, hotelDeparture, airportArrive, airportDeparture, airportArriveTime, airportDepartureTime;
-	private String diet;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, airportArrive, airportDeparture, airportArriveTime, airportDepartureTime;;
+	private Date dateCreated;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -267,25 +266,26 @@ public class Registration {
 	
 	
 	
+
 	@NotNull
-    @DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_arrive")
-	public Date getHotelArrive() {
+	public String getHotelArrive() {
 		return hotelArrive;
 	}
 
-	public void setHotelArrive(Date hotelArrive) {
+	public void setHotelArrive(String hotelArrive) {
 		this.hotelArrive = hotelArrive;
 	}
 
 	@NotNull
-    @DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_departure")
-	public Date getHotelDeparture() {
+	public String getHotelDeparture() {
 		return hotelDeparture;
 	}
 
-	public void setHotelDeparture(Date hotelDeparture) {
+	public void setHotelDeparture(String hotelDeparture) {
 		this.hotelDeparture = hotelDeparture;
 	}
 	
@@ -296,45 +296,44 @@ public class Registration {
 	
 	
 
-
-    @DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "airport_arrive")
-	public Date getAirportArrive() {
+	public String getAirportArrive() {
 		return airportArrive;
 	}
 
-	public void setAirportArrive(Date airportArrive) {
+	public void setAirportArrive(String airportArrive) {
 		this.airportArrive = airportArrive;
 	}
 
 
-    @DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "airport_departure")
-	public Date getAirportDeparture() {
+	public String getAirportDeparture() {
 		return airportDeparture;
 	}
 
-	public void setAirportDeparture(Date airportDeparture) {
+	public void setAirportDeparture(String airportDeparture) {
 		this.airportDeparture = airportDeparture;
 	}
 
-    @DateTimeFormat(iso=ISO.TIME)
+	
+
 	@Column(name = "airport_arrive_time")
-	public Date getAirportArriveTime() {
+	public String getAirportArriveTime() {
 		return airportArriveTime;
 	}
 
-	public void setAirportArriveTime(Date airportArriveTime) {
+	public void setAirportArriveTime(String airportArriveTime) {
 		this.airportArriveTime = airportArriveTime;
 	}
 
-    @DateTimeFormat(iso=ISO.TIME)
 	@Column(name = "airport_departure_time")
-	public Date getAirportDepartureTime() {
+	public String getAirportDepartureTime() {
 		return airportDepartureTime;
 	}
 
-	public void setAirportDepartureTime(Date airportDepartureTime) {
+	public void setAirportDepartureTime(String airportDepartureTime) {
 		this.airportDepartureTime = airportDepartureTime;
 	}	
 	

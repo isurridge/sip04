@@ -54,7 +54,7 @@ public class RegistrationController {
 		binder.setAllowedFields(new String[] { 
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
-			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "incidentals", "diet", "allergies", "activities"
+			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "airportArriveTime", "airportDepartureTime", "incidentals", "diet", "allergies", "activities"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.

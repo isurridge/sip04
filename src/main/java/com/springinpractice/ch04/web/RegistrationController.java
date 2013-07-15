@@ -49,7 +49,7 @@ public class RegistrationController {
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
 			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "airportArriveTime", "airportDepartureTime", "incidentals", "diet", "allergies", "activities",
-			"roomRequirements"
+			"roomRequirements", "flightNumberArrive", "flightNumberDeparture"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -67,7 +67,7 @@ public class RegistrationController {
 	public String getRegistrationForm(Model model) {
 		
 
-		Map map = new HashMap();
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
         map.putAll(loadRadioButtons());
         model.addAttribute("model", map );       
         //model.addAllAttributes(map);
@@ -92,7 +92,7 @@ public class RegistrationController {
 	public String postRegistrationForm(
 			@ModelAttribute("registration") @Valid RegistrationForm form, BindingResult result, Model model) {
 			
-			Map map = new HashMap();
+			Map<Object, Object> map = new HashMap<Object, Object>();
 	        map.putAll(loadRadioButtons());
 	        model.addAttribute("model", map );       
 	        //model.addAllAttributes(map);
@@ -119,7 +119,7 @@ public class RegistrationController {
 	
 	
 	
-	private Map loadRadioButtons(){
+	private Map<String, List<String>> loadRadioButtons(){
 		
         Map<String, List<String>> referenceData = new HashMap<String, List<String>>();
 
@@ -175,6 +175,9 @@ public class RegistrationController {
 		registration.setAirportDeparture(form.getAirportDeparture());
 		registration.setAirportArriveTime(form.getAirportArriveTime());
 		registration.setAirportDepartureTime(form.getAirportDepartureTime());
+		
+		registration.setFlightNumberArrive(form.getFlightNumberArrive());
+		registration.setFlightNumberDeparture(form.getFlightNumberDeparture());
 		
 		registration.setDiet(form.getDiet());
 		registration.setAllergies(form.getAllergies());

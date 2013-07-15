@@ -25,7 +25,7 @@ public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, hotelArrive, hotelDeparture, airportArrive,  
-			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements;
+			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture;
 	
 
 	@NotNull
@@ -366,6 +366,35 @@ public class RegistrationForm {
 	
 	
 	
+	@Size(min = 1, max = 100)
+	@Column(name = "flight_number_arrive")
+	public String getFlightNumberArrive() {
+		return flightNumberArrive;
+	}
+
+	public void setFlightNumberArrive(String flightNumberArrive) {
+		this.flightNumberArrive = flightNumberArrive;
+	}
+	
+	@Size(min = 1, max = 100)
+	@Column(name = "flight_number_departure")
+	public String getFlightNumberDeparture() {
+		return flightNumberDeparture;
+	}
+
+	public void setFlightNumberDeparture(String flightNumberDeparture) {
+		this.flightNumberDeparture = flightNumberDeparture;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -389,6 +418,8 @@ public class RegistrationForm {
 				.append("diet", diet)
 				.append("allergies", allergies)
 				.append("activities", activities)
+				.append("flightNumberArrive", flightNumberArrive)
+				.append("flightNumberDeparture", flightNumberDeparture)
 				.toString();
 	}
 }

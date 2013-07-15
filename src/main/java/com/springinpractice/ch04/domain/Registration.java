@@ -36,7 +36,7 @@ public class Registration {
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, 
-			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements;
+			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture;
 	private Date dateCreated;
 
 	@Id
@@ -408,6 +408,28 @@ public class Registration {
 	
 	
 	
+	
+	
+	
+	@Size(min = 1, max = 100)
+	@Column(name = "flight_number_arrive")
+	public String getFlightNumberArrive() {
+		return flightNumberArrive;
+	}
+
+	public void setFlightNumberArrive(String flightNumberArrive) {
+		this.flightNumberArrive = flightNumberArrive;
+	}
+	
+	@Size(min = 1, max = 100)
+	@Column(name = "flight_number_departure")
+	public String getFlightNumberDeparture() {
+		return flightNumberDeparture;
+	}
+
+	public void setFlightNumberDeparture(String flightNumberDeparture) {
+		this.flightNumberDeparture = flightNumberDeparture;
+	}
 	
 	
 	

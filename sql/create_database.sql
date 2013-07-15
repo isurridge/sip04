@@ -36,7 +36,9 @@ create table registration (
     airport_arrive  date,
     airport_departure  date,
     airport_arrive_time  varchar(50),
-    airport_departure_time  varchar(50),   
+    airport_departure_time  varchar(50), 
+    flight_number_arrive varchar(50), 
+    flight_number_departure varchar(50), 
     date_created timestamp default 0,
     date_modified timestamp default current_timestamp on update current_timestamp,
     unique index registration_idx_1 (username),
@@ -92,9 +94,9 @@ create table account_role (
 ) engine = InnoDb;
 
 insert into registration values
-    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Golf', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegan', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
-    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'On My Own', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegetarian', 'No Peanuts', 'No Smoking', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
-    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Mountain Climbing', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Low Carb', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07',  null, null, null, null);
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Golf', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegan', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, 'Alaska #777', 'Alaska #7777', null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'On My Own', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegetarian', 'No Peanuts', 'No Smoking', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, 'Alaska #777', 'Alaska #7777', null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Mountain Climbing', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Low Carb', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07',  null, null, 'Alaska #777', 'Alaska #7777', null, null);
 
 
   insert into event values

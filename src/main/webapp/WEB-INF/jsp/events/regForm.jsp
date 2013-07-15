@@ -297,7 +297,23 @@ ol.myList li {
 				</div>
 			</div>		
 			
-
+			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.flightNumberArrive" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input  path="flightNumberArrive" cssClass="short" 
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="flightNumberArrive">
+						<div class="errorMessage">
+							<form:errors path="flightNumberArrive" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
 
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
@@ -334,6 +350,36 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
+
+	
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.flightNumberDepart" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input  path="flightNumberDeparture" cssClass="short" 
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="flightNumberDeparture">
+						<div class="errorMessage">
+							<form:errors path="flightNumberDeparture" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+						
+			
+			
+			
+			
+			
+			
 			
 			
 			

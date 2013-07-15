@@ -25,7 +25,7 @@ public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, hotelArrive, hotelDeparture, airportArrive,  
-			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture;
+			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName;
 	
 
 	@NotNull
@@ -48,6 +48,19 @@ public class RegistrationForm {
 		this.firstName = firstName;
 	}
 
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Column(name = "familiar_name")
+	public String getFamiliarName() {
+		return familiarName;
+	}
+
+	public void setFamiliarName(String familiarName) {
+		this.familiarName = familiarName;
+	}	
+	
+	
+	
 	@NotNull
 	@Size(min = 1, max = 50)
 	public String getLastName() {
@@ -420,6 +433,7 @@ public class RegistrationForm {
 				.append("activities", activities)
 				.append("flightNumberArrive", flightNumberArrive)
 				.append("flightNumberDeparture", flightNumberDeparture)
+				.append("familiarName", familiarName)
 				.toString();
 	}
 }

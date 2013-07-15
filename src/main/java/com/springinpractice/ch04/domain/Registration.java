@@ -36,7 +36,7 @@ public class Registration {
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, 
-			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture;
+			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName;
 	private Date dateCreated;
 
 	@Id
@@ -73,6 +73,19 @@ public class Registration {
 		this.firstName = firstName;
 	}
 
+	@NotNull
+	@Size(min = 1, max = 50)
+	@Column(name = "familiar_name")
+	public String getFamiliarName() {
+		return familiarName;
+	}
+
+	public void setFamiliarName(String familiarName) {
+		this.familiarName = familiarName;
+	}	
+	
+	
+	
 	@NotNull
 	@Size(min = 1, max = 50)
 	@Column(name = "last_name")

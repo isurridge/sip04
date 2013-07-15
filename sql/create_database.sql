@@ -30,6 +30,7 @@ create table registration (
     breakout10 varchar(100),
     diet varchar(250),
     allergies varchar(250),
+    room_requirements varchar(250),
     hotel_arrive  date not null,
     hotel_departure  date not null,
     airport_arrive  date,
@@ -91,9 +92,9 @@ create table account_role (
 ) engine = InnoDb;
 
 insert into registration values
-    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Golf', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegan', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
-    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'On My Own', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegetarian', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
-    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Mountain Climbing', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Low Carb', 'No Peanuts', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07',  null, null, null, null);
+    (1, 'juan', 'Juan', 'Cazares', 'juan.cazares@example.com', 'Seattle', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Golf', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegan', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
+    (2, 'elvira', 'Elvira', 'Cazares', 'elvira.cazares@example.com', 'San Diego', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'On My Own', '1','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'vegetarian', 'No Peanuts', 'No Smoking', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07', null, null, null, null),
+    (3, 'julia', 'Julia', 'Cazares', 'julia.cazares@example.com', 'NY', '7777777777', 'contactName', 'travelArranger', 'Milliman', 'ada', 'Mountain Climbing', '1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Low Carb', 'No Peanuts', 'King', '2013/07/07', '2013/07/07', '2013/07/07', '2013/07/07',  null, null, null, null);
 
 
   insert into event values

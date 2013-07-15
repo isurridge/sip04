@@ -115,6 +115,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		return interestsMap;
 	}
+
+	@Override
+	public List<String> loadRoomRequirements() {
+		
+		List<String> room = new ArrayList<String>();
+		room.add("King Bed");
+		room.add("Non-smoking");
+		room.add("Two Queens");
+		
+		return room;
+	}
 	
 	
 	

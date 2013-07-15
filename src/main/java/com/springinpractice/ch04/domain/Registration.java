@@ -20,7 +20,6 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -36,7 +35,8 @@ public class Registration {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, airportArrive, airportDeparture, airportArriveTime, airportDepartureTime;;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, 
+			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements;
 	private Date dateCreated;
 
 	@Id
@@ -394,9 +394,26 @@ public class Registration {
 		this.activities = activities;
 	}
 	
-	
-	
+	@Size(min = 1, max = 100)
+	@Column(name = "room_requirements")
+	public String getRoomRequirements() {
+		return roomRequirements;
+	}
 
+	public void setRoomRequirements(String roomRequirements) {
+		this.roomRequirements = roomRequirements;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Column(name = "date_created")
 	public Date getDateCreated() {
 		return dateCreated;

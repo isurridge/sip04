@@ -7,21 +7,14 @@
  */
 package com.springinpractice.ch04.web;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-import org.springframework.format.datetime.joda.JodaDateTimeFormatAnnotationFormatterFactory;
-import org.joda.time.*;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -32,7 +25,7 @@ public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, hotelArrive, hotelDeparture, airportArrive,  
-			airportDeparture, airportArriveTime, airportDepartureTime;
+			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements;
 	
 
 	@NotNull
@@ -321,7 +314,15 @@ public class RegistrationForm {
 	
 	
 
-	
+	@Size(min = 1, max = 100)
+	@Column(name = "room_requirements")
+	public String getRoomRequirements() {
+		return roomRequirements;
+	}
+
+	public void setRoomRequirements(String roomRequirements) {
+		this.roomRequirements = roomRequirements;
+	}
 	
 	
 	

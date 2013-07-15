@@ -7,9 +7,6 @@
  */
 package com.springinpractice.ch04.web;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +16,6 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +25,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.springinpractice.ch04.domain.Registration;
 import com.springinpractice.ch04.service.RegistrationService;
-import com.springinpractice.ch04.service.RegistrationServiceImpl;
 
 /**
  * @author Willie Wheeler (willie.wheeler@gmail.com)
@@ -54,7 +48,8 @@ public class RegistrationController {
 		binder.setAllowedFields(new String[] { 
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
-			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "airportArriveTime", "airportDepartureTime", "incidentals", "diet", "allergies", "activities"
+			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "airportArriveTime", "airportDepartureTime", "incidentals", "diet", "allergies", "activities",
+			"roomRequirements"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -141,6 +136,8 @@ public class RegistrationController {
         referenceData.put("incidentalsList", registrationService.loadIncidentals()); 
         referenceData.put("dietList", registrationService.loadDiet());
         referenceData.put("activitiesList", registrationService.loadActivities());
+        referenceData.put("roomRequirementsList", registrationService.loadRoomRequirements());
+        
 		return referenceData;
 		
 	}
@@ -182,6 +179,7 @@ public class RegistrationController {
 		registration.setDiet(form.getDiet());
 		registration.setAllergies(form.getAllergies());
 		registration.setActivities(form.getActivities());
+		registration.setRoomRequirements(form.getRoomRequirements());
 		
 		return registration;
 	}

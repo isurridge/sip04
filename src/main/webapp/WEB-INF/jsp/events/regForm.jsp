@@ -200,7 +200,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:textarea cols="22" rows="3"  path="ada" cssClass="short"
+						<form:textarea cols="22" rows="3"  path="ada" cssClass="short" style="width:400px; height:100px"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="ada">
@@ -238,7 +238,25 @@ ol.myList li {
 			
 			
 			
-			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first" >
+					<spring:message code="newUserRegistration.label.roomRequirements" />
+				</div>
+				<div class="yui-u">
+					<div>
+
+						<ol class="myList">
+							<form:radiobuttons items="${model.roomRequirementsList}" path="roomRequirements"
+								cssClass="myList" element="li" cssErrorClass="error" />
+						</ol>
+					</div>
+					<form:errors path="roomRequirements">
+						<div class="errorMessage">
+							<form:errors path="roomRequirements" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>	
 			
 			
 			
@@ -262,7 +280,22 @@ ol.myList li {
 			</div>
 			
 			
-			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.airportArriveTime" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input path="airportArriveTime" cssClass="short"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="airportArriveTime">
+						<div class="errorMessage">
+							<form:errors path="airportArriveTime" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>		
 			
 
 
@@ -284,22 +317,7 @@ ol.myList li {
 			</div>
 			
 			
-			<div class="gridRow yui-gf">
-				<div class="fieldLabel yui-u first">
-					<spring:message code="newUserRegistration.label.airportArriveTime" />
-				</div>
-				<div class="yui-u">
-					<div>
-						<form:input path="airportArriveTime" cssClass="short"
-							cssErrorClass="short error" />
-					</div>
-					<form:errors path="airportArriveTime">
-						<div class="errorMessage">
-							<form:errors path="airportArriveTime" htmlEscape="false" />
-						</div>
-					</form:errors>
-				</div>
-			</div>
+
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.airportDepartTime" />
@@ -351,7 +369,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:textarea cols="22" rows="3" path="allergies" cssClass="short"
+						<form:textarea cols="22" rows="3" path="allergies" cssClass="short" style="width:400px; height:100px"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="allergies">

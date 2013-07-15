@@ -23,4 +23,6 @@ public interface RegistrationService {
     List<String> loadIncidentals();
     List<String> loadDiet();
 	List<String> loadActivities();
+	
+	List<String> loadRoomRequirements();
 }

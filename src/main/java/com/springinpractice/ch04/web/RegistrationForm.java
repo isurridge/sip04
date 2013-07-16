@@ -25,7 +25,8 @@ public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, hotelArrive, hotelDeparture, airportArrive,  
-			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName;
+			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName,
+			roomComments, travelComments, oday, firstTimeBreakfast;
 	
 
 	@NotNull
@@ -338,6 +339,15 @@ public class RegistrationForm {
 	}
 	
 	
+	@Size(min = 1, max = 500)
+	@Column(name = "room_comments")
+	public String getRoomComments() {
+		return roomComments;
+	}
+
+	public void setRoomComments(String roomComments) {
+		this.roomComments = roomComments;
+	}
 	
 	
 	
@@ -354,6 +364,16 @@ public class RegistrationForm {
 	
 
 	
+	@Size(min = 1, max = 500)
+	@Column(name = "travel_comments")
+	public String getTravelComments() {
+		return travelComments;
+	}
+
+	public void setTravelComments(String travelComments) {
+		this.travelComments = travelComments;
+	}
+	
 	
 	@Size(min = 1, max = 250)
 	@Column(name = "allergies")
@@ -365,7 +385,7 @@ public class RegistrationForm {
 		this.allergies = allergies;
 	}
 	
-	@NotNull
+
 	@Size(min = 1, max = 100)
 	@Column(name = "activities")
 	public String getActivities() {
@@ -404,9 +424,25 @@ public class RegistrationForm {
 	
 	
 	
+	@Size(min = 1, max = 100)
+	@Column(name = "oday")
+	public String getOday() {
+		return oday;
+	}
+
+	public void setOday(String oday) {
+		this.oday = oday;
+	}
 	
-	
-	
+	@Size(min = 1, max = 100)
+	@Column(name = "first_time_breakfast")
+	public String getFirstTimeBreakfast() {
+		return firstTimeBreakfast;
+	}
+
+	public void setFirstTimeBreakfast(String firstTimeBreakfast) {
+		this.firstTimeBreakfast = firstTimeBreakfast;
+	}
 	
 
 	public String toString() {
@@ -434,6 +470,12 @@ public class RegistrationForm {
 				.append("flightNumberArrive", flightNumberArrive)
 				.append("flightNumberDeparture", flightNumberDeparture)
 				.append("familiarName", familiarName)
+				.append("roomComments", roomComments)
+				
+				.append("travelComments", travelComments)
+			
+				.append("oday", oday)
+				.append("firstTimeBreakfast", firstTimeBreakfast)
 				.toString();
 	}
 }

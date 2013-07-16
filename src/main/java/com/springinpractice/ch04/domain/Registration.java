@@ -36,7 +36,8 @@ public class Registration {
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
 			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, 
-			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName;
+			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName,
+			roomComments, travelComments, oday, firstTimeBreakfast;
 	private Date dateCreated;
 
 	@Id
@@ -396,7 +397,7 @@ public class Registration {
 	
 	
 	
-	@NotNull
+
 	@Size(min = 1, max = 100)
 	@Column(name = "activities")
 	public String getActivities() {
@@ -421,6 +422,27 @@ public class Registration {
 	
 	
 	
+
+	
+	@Size(min = 1, max = 500)
+	@Column(name = "room_comments")
+	public String getRoomComments() {
+		return roomComments;
+	}
+
+	public void setRoomComments(String roomComments) {
+		this.roomComments = roomComments;
+	}
+	
+	@Size(min = 1, max = 500)
+	@Column(name = "travel_comments")
+	public String getTravelComments() {
+		return travelComments;
+	}
+
+	public void setTravelComments(String travelComments) {
+		this.travelComments = travelComments;
+	}	
 	
 	
 	
@@ -445,7 +467,32 @@ public class Registration {
 	}
 	
 	
+	@Size(min = 1, max = 100)
+	@Column(name = "oday")
+	public String getOday() {
+		return oday;
+	}
+
+	public void setOday(String oday) {
+		this.oday = oday;
+	}
 	
+	
+	
+	
+	
+	
+	
+	
+	@Size(min = 1, max = 100)
+	@Column(name = "first_time_breakfast")
+	public String getFirstTimeBreakfast() {
+		return firstTimeBreakfast;
+	}
+
+	public void setFirstTimeBreakfast(String firstTimeBreakfast) {
+		this.firstTimeBreakfast = firstTimeBreakfast;
+	}
 	
 	
 	

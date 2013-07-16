@@ -209,7 +209,6 @@ ol.myList li {
 			
 			
 
-			
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.ada" />
@@ -275,7 +274,22 @@ ol.myList li {
 			</div>	
 			
 			
-			
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.roomComments" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:textarea cols="22" rows="3"  path="roomComments" cssClass="short" style="width:400px; height:100px"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="roomComments">
+						<div class="errorMessage">
+							<form:errors path="roomComments" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
 			
 			
 			<div class="gridRow yui-gf">
@@ -390,7 +404,22 @@ ol.myList li {
 			
 			
 						
-			
+		    <div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.travelComments" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:textarea cols="22" rows="3"  path="travelComments" cssClass="short" style="width:400px; height:100px"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="travelComments">
+						<div class="errorMessage">
+							<form:errors path="travelComments" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>		
 			
 			
 			
@@ -441,6 +470,49 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
+			 
+			 
+			 
+			 
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.contactName" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input path="contactName" cssClass="short"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="contactName">
+						<div class="errorMessage">
+							<form:errors path="contactName" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+			<div class="gridRow yui-gf">
+				<div class="fieldLabel yui-u first">
+					<spring:message code="newUserRegistration.label.contactPhone" />
+				</div>
+				<div class="yui-u">
+					<div>
+						<form:input path="contactPhone" cssClass="short"
+							cssErrorClass="short error" />
+					</div>
+					<form:errors path="contactPhone">
+						<div class="errorMessage">
+							<form:errors path="contactPhone" htmlEscape="false" />
+						</div>
+					</form:errors>
+				</div>
+			</div>
+			 
+			 
+			 
+			 
+			 
+			 
+			 
 			 
 
 			<div class="gridRow yui-gf">
@@ -621,6 +693,10 @@ ol.myList li {
    
 
 
+
+
+
+
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
 					<spring:message code="newUserRegistration.label.breakout9" />
@@ -678,43 +754,45 @@ ol.myList li {
 					</form:errors>
 				</div>
 			</div>
-
-
-
-
-
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
-					<spring:message code="newUserRegistration.label.contactName" />
+					<spring:message code="newUserRegistration.label.oday" />
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="contactName" cssClass="short"
-							cssErrorClass="short error" />
+						<ol class="myList">
+							<form:checkbox path="oday" value="1"
+								 cssErrorClass="error" />Milliman Consultants Orientation Day (Invitation Only)
+						</ol>
 					</div>
-					<form:errors path="contactName">
+					<form:errors path="oday">
 						<div class="errorMessage">
-							<form:errors path="contactName" htmlEscape="false" />
+							<form:errors path="oday" htmlEscape="false" />
 						</div>
 					</form:errors>
 				</div>
 			</div>
+
+
 			<div class="gridRow yui-gf">
 				<div class="fieldLabel yui-u first">
-					<spring:message code="newUserRegistration.label.contactPhone" />
+					<spring:message code="newUserRegistration.label.firstTimeBreakfast" />
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="contactPhone" cssClass="short"
-							cssErrorClass="short error" />
+						<ol class="myList">
+							<form:checkbox path="firstTimeBreakfast" value="1"
+								 cssErrorClass="error" />Yes, I'm attending the breakfast.
+						</ol>
 					</div>
-					<form:errors path="contactPhone">
+					<form:errors path="firstTimeBreakfast">
 						<div class="errorMessage">
-							<form:errors path="contactPhone" htmlEscape="false" />
+							<form:errors path="firstTimeBreakfast" htmlEscape="false" />
 						</div>
 					</form:errors>
 				</div>
 			</div>
+
 
 
 

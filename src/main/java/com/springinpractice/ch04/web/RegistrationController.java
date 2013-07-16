@@ -49,7 +49,7 @@ public class RegistrationController {
 			"username",	"firstName", "lastName", "email", "city", "contactPhone", "contactName", "travelArranger", "company", "ada",
 			"breakout1", "breakout2", "breakout3", "breakout4", "breakout5", "breakout6", "breakout7", "breakout8","breakout9", "breakout10",
 			"hotelArrive", "hotelDeparture", "airportArrive", "airportDeparture", "airportArriveTime", "airportDepartureTime", "incidentals", "diet", "allergies", "activities",
-			"roomRequirements", "flightNumberArrive", "flightNumberDeparture", "familiarName"
+			"roomRequirements", "flightNumberArrive", "flightNumberDeparture", "familiarName", "roomComments", "travelComments", "oday", "firstTimeBreakfast"
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
@@ -183,8 +183,12 @@ public class RegistrationController {
 		registration.setDiet(form.getDiet());
 		registration.setAllergies(form.getAllergies());
 		registration.setActivities(form.getActivities());
-		registration.setRoomRequirements(form.getRoomRequirements());
 		
+		registration.setRoomRequirements(form.getRoomRequirements());
+		registration.setRoomComments(form.getRoomComments());
+		registration.setTravelComments(form.getTravelComments());
+		registration.setOday(form.getOday());		
+		registration.setFirstTimeBreakfast(form.getFirstTimeBreakfast());
 		return registration;
 	}
 }

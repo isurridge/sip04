@@ -174,7 +174,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="hotelArrive" cssClass="short"
+						<form:input path="hotelArrive" cssClass="short" readonly="true"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="hotelArrive">
@@ -196,7 +196,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="hotelDeparture" cssClass="short"
+						<form:input path="hotelDeparture" cssClass="short" readonly="true"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="hotelDeparture">
@@ -298,7 +298,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="airportArrive" cssClass="short"
+						<form:input path="airportArrive" cssClass="short" readonly="true"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="airportArrive">
@@ -351,7 +351,7 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<form:input path="airportDeparture" cssClass="short"
+						<form:input path="airportDeparture" cssClass="short" readonly="true"
 							cssErrorClass="short error" />
 					</div>
 					<form:errors path="airportDeparture">

@@ -35,9 +35,9 @@ public class Registration {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada,
 			breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet, hotelArrive, hotelDeparture, 
-			airportArrive, airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName,
-			roomComments, travelComments, oday, firstTimeBreakfast;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, allergies, activities, diet,  
+			 airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName, hotelArrive, hotelDeparture,
+			roomComments, travelComments, oday, firstTimeBreakfast, airportArrive, airportDeparture;
 	private Date dateCreated;
 
 	@Id
@@ -282,7 +282,7 @@ public class Registration {
 	
 
 	@NotNull
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_arrive")
 	public String getHotelArrive() {
 		return hotelArrive;
@@ -293,7 +293,7 @@ public class Registration {
 	}
 
 	@NotNull
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_departure")
 	public String getHotelDeparture() {
 		return hotelDeparture;
@@ -321,7 +321,7 @@ public class Registration {
 	}
 
 
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "airport_departure")
 	public String getAirportDeparture() {
 		return airportDeparture;
@@ -331,6 +331,13 @@ public class Registration {
 		this.airportDeparture = airportDeparture;
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	
 
 	@Column(name = "airport_arrive_time")

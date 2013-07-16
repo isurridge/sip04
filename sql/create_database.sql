@@ -4,6 +4,7 @@ drop table if exists account;
 drop table if exists registration;
 drop table if exists event;
 
+
 create table registration (
     id int unsigned not null auto_increment primary key,
     username varchar(50) unique not null,
@@ -33,10 +34,10 @@ create table registration (
     allergies varchar(250),
     room_requirements varchar(250),
     room_comments varchar(500),
-    hotel_arrive  date not null,
-    hotel_departure  date not null,
-    airport_arrive  date,
-    airport_departure  date,
+    hotel_arrive  varchar(50)  NOT NULL,
+    hotel_departure  varchar(50)  NOT NULL,
+    airport_arrive  varchar(50)  NOT NULL,
+    airport_departure  varchar(50)  NOT NULL,
     airport_arrive_time  varchar(50),
     airport_departure_time  varchar(50), 
     flight_number_arrive varchar(50), 

@@ -7,6 +7,8 @@
  */
 package com.springinpractice.ch04.web;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,9 +26,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class RegistrationForm {
 	private String username, firstName, lastName, email, city, contactPhone,
 			contactName, travelArranger, company, ada, breakout1, breakout2, breakout3, breakout4, breakout5,
-			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, hotelArrive, hotelDeparture, airportArrive,  
-			airportDeparture, airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName,
-			roomComments, travelComments, oday, firstTimeBreakfast;
+			breakout6, breakout7, breakout8, breakout9, breakout10, incidentals, diet, allergies, activities, 
+			airportArriveTime, airportDepartureTime, roomRequirements, flightNumberArrive, flightNumberDeparture, familiarName, hotelArrive, hotelDeparture,
+			roomComments, travelComments, oday, firstTimeBreakfast, airportArrive, airportDeparture;
 	
 
 	@NotNull
@@ -254,7 +256,7 @@ public class RegistrationForm {
 	
 	
 	@NotNull
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_arrive")
 	public String getHotelArrive() {
 		return hotelArrive;
@@ -265,7 +267,7 @@ public class RegistrationForm {
 	}
 
 	@NotNull
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "hotel_departure")
 	public String getHotelDeparture() {
 		return hotelDeparture;
@@ -280,10 +282,11 @@ public class RegistrationForm {
 	
 	
 	
+	
 
 
   
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "airport_arrive")
 	public String getAirportArrive() {
 		return airportArrive;
@@ -294,7 +297,7 @@ public class RegistrationForm {
 	}
 
 
-	@DateTimeFormat(pattern="#{messages['date_format']}")
+	//@DateTimeFormat(pattern="#{messages['date_format']}")
 	@Column(name = "airport_departure")
 	public String getAirportDeparture() {
 		return airportDeparture;

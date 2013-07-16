@@ -7,6 +7,9 @@
  */
 package com.springinpractice.ch04.web;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +17,13 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.hibernate.type.DateType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.format.datetime.joda.DateTimeParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -53,9 +60,10 @@ public class RegistrationController {
 		});
 		
 		// Converts empty string to null, which is nice since most validation rules fire only if the field isn't null.
-		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-	//	 CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true);
-	//     binder.registerCustomEditor(Date.class, editor);
+		  binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+		//  SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
+		  //dateFormat.setLenient(false);  
+		//  binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));  
 	}
 	
 
@@ -144,6 +152,7 @@ public class RegistrationController {
 
 	
 	
+
 	private static Registration toRegistration(RegistrationForm form) {
 	
 		Registration registration = new Registration();
@@ -174,6 +183,9 @@ public class RegistrationController {
 		registration.setHotelDeparture(form.getHotelDeparture());
 		registration.setAirportArrive(form.getAirportArrive());
 		registration.setAirportDeparture(form.getAirportDeparture());
+		
+		
+		
 		registration.setAirportArriveTime(form.getAirportArriveTime());
 		registration.setAirportDepartureTime(form.getAirportDepartureTime());
 		

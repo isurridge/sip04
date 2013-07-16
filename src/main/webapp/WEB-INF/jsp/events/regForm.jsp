@@ -760,10 +760,9 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<ol class="myList">
-							<form:checkbox path="oday" value="1"
+						<form:checkbox path="oday" value="1"
 								 cssErrorClass="error" />Milliman Consultants Orientation Day (Invitation Only)
-						</ol>
+						
 					</div>
 					<form:errors path="oday">
 						<div class="errorMessage">
@@ -780,10 +779,9 @@ ol.myList li {
 				</div>
 				<div class="yui-u">
 					<div>
-						<ol class="myList">
 							<form:checkbox path="firstTimeBreakfast" value="1"
 								 cssErrorClass="error" />Yes, I'm attending the breakfast.
-						</ol>
+						
 					</div>
 					<form:errors path="firstTimeBreakfast">
 						<div class="errorMessage">

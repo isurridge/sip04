@@ -6,6 +6,9 @@ $(function() {
 		changeMonth: false,
 		numberOfMonths: 2,
 		dateFormat: "DD, d MM, yy",
+		// showOn: "button",
+		// buttonImage: "/skin/images/calendar.gif",
+		// buttonImageOnly: true,
 		onClose: function( selectedDate ) {
 			$("form.main :input[id='hotelDeparture']").datepicker( "option", "minDate", selectedDate );
 		}

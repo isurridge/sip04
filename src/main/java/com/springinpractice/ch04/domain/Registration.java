@@ -136,7 +136,8 @@ public class Registration {
 		this.company = company;
 	}
 
-	@Size(min = 1, max = 50)
+	@Size(min = 6, max = 50)
+	@Email
 	@Column(name = "travel_arranger")
 	public String getTravelArranger() {
 		return travelArranger;
